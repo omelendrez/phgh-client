@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar dense color="primary" class="white--text">
+    <v-toolbar dense fixed color="primary" class="white--text">
       <v-toolbar-title>FITTOC</v-toolbar-title>
       <v-toolbar-items>
         <v-btn flat class="white--text" @click="route('Home')">Home</v-btn>

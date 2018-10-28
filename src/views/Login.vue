@@ -40,5 +40,6 @@ export default {
 .login {
   background-image: url(./../assets/background2.jpg);
   background-size: cover;
+  background-position: center;
 }
 </style>
