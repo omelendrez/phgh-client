@@ -1,5 +1,5 @@
 <template>
-  <v-content class="login">
+  <v-content>
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
         <v-flex xs12 sm8 md4>
@@ -35,9 +35,5 @@ export default {
 </script>
 
 <style>
-.login {
-  background-image: url(./../assets/background2.jpg);
-  background-size: cover;
-  background-position: center;
-}
+
 </style>

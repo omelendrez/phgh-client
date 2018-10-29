@@ -2,7 +2,7 @@
   <v-app>
     <v-navigation-drawer stateles value="true" fixed clipped v-if="drawer" class="hidden-lg-and-up">
       <v-list dense>
-        <v-list-tile @click="route(option.route)" v-for="(option, index) in options" :key="index" v-if="option.title !== '[separator]'">
+        <v-list-tile @click="route(option)" v-for="(option, index) in options" :key="index" v-if="option.title !== '[separator]'">
           <v-list-tile-action>
             <v-icon>{{option.icon}}</v-icon>
           </v-list-tile-action>
@@ -15,7 +15,7 @@
       <v-toolbar-side-icon class="white--text hidden-lg-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>FITTOC</v-toolbar-title>
       <v-toolbar-items v-if="option.title!=='[separator]'" v-for="(option, index) in options" :key="index" class="hidden-md-and-down">
-        <v-btn flat class="white--text" @click="route(option.route)">
+        <v-btn flat class="white--text" @click="route(option)">
           <v-icon class="white--text menu-icon">{{option.icon}}</v-icon>
           {{option.title}}
         </v-btn>
@@ -35,16 +35,17 @@ export default {
   data() {
     return {
       options: [],
-      drawer: false
+      drawer: false,
+      selected: null
     }
   },
   created() {
     this.options = options
   },
   methods: {
-    route(route) {
+    route(option) {
       this.drawer = false
-      this.$router.push({ name: route })
+      this.$router.push({ name: option.route })
     }
 
   }
@@ -55,15 +56,17 @@ export default {
 body {
   font-family: Roboto;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 
 .menu-icon {
   margin-right: 6px;
+}
+
+#app {
+  background-image: url(./assets/background2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.selected {
+  color:red;
 }
 </style>

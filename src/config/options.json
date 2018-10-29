@@ -36,8 +36,7 @@
             "icon": "email"
         },
         {
-            "title": "[separator]",
-            "route": ""
+            "title": "[separator]"
         },
         {
             "title": "Signup",
