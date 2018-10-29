@@ -3,11 +3,11 @@
     <v-container>
       <v-card-text>
         <v-form>
-          <v-text-field name="username" label="Username" type="text"></v-text-field>
-          <v-text-field name="email" label="Email" type="text"></v-text-field>
-          <v-text-field name="phone" label="Phone" type="text"></v-text-field>
-          <v-text-field name="registerPassword" label="Password" id="registerPpassword" type="password"></v-text-field>
-          <v-text-field name="confirm" label="Re-type password" id="confirm" type="password"></v-text-field>
+          <v-text-field prepend-icon="person" name="username" label="Username" type="text"></v-text-field>
+          <v-text-field prepend-icon="mail" name="email" label="Email" type="text"></v-text-field>
+          <v-text-field prepend-icon="phone" name="phone" label="Phone" type="text"></v-text-field>
+          <v-text-field prepend-icon="lock" name="registerPassword" label="Password" id="registerPpassword" type="password"></v-text-field>
+          <v-text-field prepend-icon="lock" name="confirm" label="Re-enter password" id="confirm" type="password"></v-text-field>
         </v-form>
       </v-card-text>
       <v-card-actions>

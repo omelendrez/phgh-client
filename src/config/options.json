@@ -1,0 +1,53 @@
+{
+    "options": [
+        {
+            "title": "Home",
+            "route": "Home",
+            "icon": "home"
+        },
+        {
+            "title": "What's FITTOC",
+            "route": "Home",
+            "icon": "local_play"
+        },
+        {
+            "title": "Ideology",
+            "route": "Home",
+            "icon": "all_inclusive"
+        },
+        {
+            "title": "FAQ",
+            "route": "Home",
+            "icon": "help"
+        },
+        {
+            "title": "FITTOC Universal",
+            "route": "Home",
+            "icon": "vpn_lock"
+        },
+        {
+            "title": "Charity",
+            "route": "Home",
+            "icon": "wc"
+        },
+        {
+            "title": "Contact",
+            "route": "Home",
+            "icon": "email"
+        },
+        {
+            "title": "[separator]",
+            "route": ""
+        },
+        {
+            "title": "Signup",
+            "route": "Signup",
+            "icon": "thumb_up"
+        },
+        {
+            "title": "Login",
+            "route": "Login",
+            "icon": "person"
+        }
+    ]
+}
