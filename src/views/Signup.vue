@@ -5,10 +5,10 @@
         <v-flex xs12 sm8 md4>
           <v-toolbar color="primary" dark>
             <v-toolbar-title>
-              Login
+              Signup
             </v-toolbar-title>
           </v-toolbar>
-          <LoginForm />
+          <RegisterForm />
         </v-flex>
       </v-layout>
     </v-container>
@@ -16,24 +16,23 @@
 </template>
 
 <script>
-import LoginForm from '@/components/forms/LoginForm.vue'
+import RegisterForm from '@/components/forms/RegisterForm.vue'
 
 export default {
-  name: 'Login',
+  name: 'Signup',
   components: {
-    LoginForm
+    RegisterForm
   },
   data() {
     return {
 
-}
+    }
   },
   created() {
 
-}
+  }
 }
 </script>
 
 <style>
-
 </style>
