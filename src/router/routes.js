@@ -13,6 +13,21 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: 'Signup'
+  },
+  {
+    path: 'whats-fittoc',
+    name: 'WhatsFittoc',
+    component: 'WhatsFittoc'
+  },
+  {
+    path: 'ideology',
+    name: 'Ideology',
+    component: 'Ideology'
+  },
+  {
+    path: 'faq',
+    name: 'Faq',
+    component: 'Faq'
   }
 ]
 

@@ -7,17 +7,17 @@
         },
         {
             "title": "What's FITTOC",
-            "route": "Home",
+            "route": "WhatsFittoc",
             "icon": "local_play"
         },
         {
             "title": "Ideology",
-            "route": "Home",
+            "route": "Ideology",
             "icon": "all_inclusive"
         },
         {
             "title": "FAQ",
-            "route": "Home",
+            "route": "Faq",
             "icon": "help"
         },
         {
