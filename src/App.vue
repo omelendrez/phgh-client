@@ -13,7 +13,12 @@
     </v-navigation-drawer>
     <v-toolbar dense fixed color="primary" class="white--text">
       <v-toolbar-side-icon class="white--text hidden-lg-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>FITTOC</v-toolbar-title>
+      <v-toolbar-title>
+        <v-avatar size="32px">
+          <v-img :src="logo" contain height="32px" width="32px" alt="FITTOC"></v-img>
+        </v-avatar>
+        FITTOC
+      </v-toolbar-title>
       <v-toolbar-items v-if="option.title!=='[separator]'" v-for="(option, index) in options" :key="index" class="hidden-md-and-down">
         <v-btn flat class="white--text" @click="route(option)">
           <v-icon class="white--text menu-icon">{{option.icon}}</v-icon>
@@ -28,6 +33,7 @@
 <script>
 import store from '@/store'
 import options from '@/config'
+import logo from '@/assets/icon.png'
 
 export default {
   name: 'app',
@@ -36,11 +42,13 @@ export default {
     return {
       options: [],
       drawer: false,
-      selected: null
+      selected: null,
+      logo: null
     }
   },
   created() {
     this.options = options
+    this.logo = logo
   },
   methods: {
     route(option) {
@@ -67,6 +75,6 @@ body {
   background-position: center;
 }
 .selected {
-  color:red;
+  color: red;
 }
 </style>
