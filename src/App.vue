@@ -20,8 +20,8 @@
         FITTOC
       </v-toolbar-title>
       <v-toolbar-items v-if="option.title!=='[separator]'" v-for="(option, index) in options" :key="index" class="hidden-md-and-down">
-        <v-btn flat class="white--text" @click="route(option)">
-          <v-icon class="white--text menu-icon">{{option.icon}}</v-icon>
+        <v-btn small flat class="white--text" @click="route(option)">
+          <v-icon small class="white--text menu-icon">{{option.icon}}</v-icon>
           {{option.title}}
         </v-btn>
       </v-toolbar-items>
@@ -38,7 +38,7 @@ import logo from '@/assets/icon.png'
 export default {
   name: 'app',
   store,
-  data() {
+  data () {
     return {
       options: [],
       drawer: false,
@@ -46,12 +46,12 @@ export default {
       logo: null
     }
   },
-  created() {
+  created () {
     this.options = options
     this.logo = logo
   },
   methods: {
-    route(option) {
+    route (option) {
       this.drawer = false
       this.$router.push({ name: option.route })
     }
