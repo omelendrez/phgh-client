@@ -111,7 +111,8 @@ export default {
     const msg = 'Together We Shall Be Financially Free'
     const options = {
       body: msg,
-      icon: icon
+      icon: icon,
+      vibrate: [200, 100, 200]
     }
     const result = nonPersistentNotification(options) || persistentNotification(options)
     console.log(result)
