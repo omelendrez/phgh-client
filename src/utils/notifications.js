@@ -20,14 +20,14 @@ export const nonPersistentNotification = (options) => {
   }
 }
 
-export const persistentNotification = (msg) => {
+export const persistentNotification = (options) => {
   if (!('Notification' in window) || !('ServiceWorkerRegistration' in window)) {
     return 'Persistent Notification API not supported!'
   }
   try {
     navigator.serviceWorker.getRegistration()
       .then(reg => {
-        reg.showNotification(msg)
+        reg.showNotification('FITTOC', options)
       })
       .catch(err => 'Service Worker registration error: ' + err)
   } catch (err) {
