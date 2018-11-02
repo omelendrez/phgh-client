@@ -83,6 +83,7 @@
 <script>
 import Logo from '@/components/common/Logo'
 import Warning from '@/components/Warning'
+import icon from '@/assets/icon.png'
 import { requestPermission, nonPersistentNotification, persistentNotification } from '@/utils/notifications'
 
 export default {
@@ -107,9 +108,12 @@ export default {
   },
   created () {
     requestPermission()
-    const msg = 'Welcome to FITTOC'
-    const result = persistentNotification(msg) || nonPersistentNotification(msg)
-
+    const msg = 'Together We Shall Be Financially Free'
+    const options = {
+      body: msg,
+      icon: icon
+    }
+    const result = nonPersistentNotification(options)
     console.log(result)
   }
 }

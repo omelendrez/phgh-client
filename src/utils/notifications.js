@@ -8,12 +8,12 @@ export const requestPermission = () => {
   })
 }
 
-export const nonPersistentNotification = (msg) => {
+export const nonPersistentNotification = (options) => {
   if (!('Notification' in window)) {
     return 'Notification API not supported!'
   }
   try {
-    const notification = new Notification(msg)
+    const notification = new Notification('FITTOC', options)
     return notification
   } catch (err) {
     return 'Notification API error: ' + err
