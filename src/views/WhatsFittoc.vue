@@ -3,6 +3,7 @@
     <v-card>
       <v-card-title primary-title class="headline green lighten-3">
         <h1 class="headline">What is FITTOC?</h1>
+        <Logo />
       </v-card-title>
       <v-card-text>
         <p>
@@ -93,25 +94,27 @@
 </template>
 
 <script>
+import Logo from '@/components/common/Logo'
 import Warning from '@/components/Warning'
 import img01 from '@/assets/img01.png'
 export default {
   name: 'WhatsFittoc',
   components: {
+    Logo,
     Warning
   },
-  data() {
+  data () {
     return {
       dialog: false,
       src: null
     }
   },
   methods: {
-    activate() {
+    activate () {
       this.dialog = !this.dialog
     }
   },
-  created() {
+  created () {
     this.src = img01
   }
 }

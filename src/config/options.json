@@ -8,7 +8,7 @@
         {
             "title": "What's FITTOC",
             "route": "WhatsFittoc",
-            "icon": "local_play"
+            "icon": "important_devices"
         },
         {
             "title": "Ideology",
@@ -22,13 +22,18 @@
         },
         {
             "title": "FITTOC Universal",
-            "route": "Home",
-            "icon": "vpn_lock"
+            "route": "Universal",
+            "icon": "language"
         },
         {
             "title": "Charity",
-            "route": "Home",
-            "icon": "wc"
+            "route": "Charity",
+            "icon": "redeem"
+        },
+        {
+            "title": "Testimonials",
+            "route": "Testimonials",
+            "icon": "record_voice_over"
         },
         {
             "title": "Contact",
@@ -41,7 +46,7 @@
         {
             "title": "Signup",
             "route": "Signup",
-            "icon": "thumb_up"
+            "icon": "how_to_reg"
         },
         {
             "title": "Login",

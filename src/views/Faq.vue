@@ -3,6 +3,7 @@
     <v-card>
       <v-card-title primary-title class="headline green lighten-3">
         <h1 class="headline">FAQ</h1>
+        <Logo />
       </v-card-title>
       <v-card-text>
         <v-expansion-panel>
@@ -23,16 +24,19 @@
 </template>
 
 <script>
+import Logo from '@/components/common/Logo'
 import { faq } from '@/assets/faq.json'
-
 export default {
   name: 'Faq',
-  data() {
+  components: {
+    Logo
+  },
+  data () {
     return {
       items: []
     }
   },
-  created() {
+  created () {
     this.items = faq
   }
 }
@@ -46,7 +50,6 @@ p {
   text-align: justify;
 }
 .header {
-  color: #356859
-;
+  color: #356859;
 }
 </style>
