@@ -1,6 +1,9 @@
 <template>
   <v-card>
-    <v-card-title class="headline green lighten-3" primary-title>WARNING!</v-card-title>
+    <v-card-title class="headline green lighten-3" primary-title>WARNING!
+      <Logo />
+    </v-card-title>
+
     <v-card-text>
       <p>
         There are no guarantees and promises! Neither explicit nor implicit.
@@ -37,8 +40,12 @@
   </v-card>
 </template>
 <script>
+import Logo from '@/components/common/Logo'
 export default {
   name: 'Warning',
+  components: {
+    Logo
+  },
   props: {
     activate: {
       type: Function

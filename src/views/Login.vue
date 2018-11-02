@@ -7,6 +7,7 @@
             <v-toolbar-title>
               Login
             </v-toolbar-title>
+            <Logo />
           </v-toolbar>
           <LoginForm />
         </v-flex>
@@ -16,19 +17,21 @@
 </template>
 
 <script>
+import Logo from '@/components/common/Logo'
 import LoginForm from '@/components/forms/LoginForm.vue'
 
 export default {
   name: 'Login',
   components: {
+    Logo,
     LoginForm
   },
-  data() {
+  data () {
     return {
 
     }
   },
-  created() {
+  created () {
 
   }
 }

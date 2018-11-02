@@ -3,6 +3,7 @@
     <v-card>
       <v-card-title primary-title class="headline green lighten-3">
         <h1 class="headline">Ideology</h1>
+        <Logo />
       </v-card-title>
       <v-card-text>
         <p>
@@ -90,13 +91,17 @@
 </template>
 
 <script>
+import Logo from '@/components/common/Logo'
 export default {
   name: 'Ideology',
-  data() {
+  components: {
+    Logo
+  },
+  data () {
     return {
     }
   },
-  created() {
+  created () {
   }
 }
 </script>

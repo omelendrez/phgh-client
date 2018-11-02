@@ -7,6 +7,7 @@
             <v-toolbar-title>
               Signup
             </v-toolbar-title>
+            <Logo />
           </v-toolbar>
           <RegisterForm />
         </v-flex>
@@ -16,19 +17,21 @@
 </template>
 
 <script>
+import Logo from '@/components/common/Logo'
 import RegisterForm from '@/components/forms/RegisterForm.vue'
 
 export default {
   name: 'Signup',
   components: {
+    Logo,
     RegisterForm
   },
-  data() {
+  data () {
     return {
 
     }
   },
-  created() {
+  created () {
 
   }
 }

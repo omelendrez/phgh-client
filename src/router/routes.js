@@ -28,6 +28,21 @@ const routes = [
     path: 'faq',
     name: 'Faq',
     component: 'Faq'
+  },
+  {
+    path: 'universal',
+    name: 'Universal',
+    component: 'Universal'
+  },
+  {
+    path: 'charity',
+    name: 'Charity',
+    component: 'Charity'
+  },
+  {
+    path: 'testimonials',
+    name: 'Testimonials',
+    component: 'Testimonials'
   }
 ]
 
