@@ -84,7 +84,7 @@
 import Logo from '@/components/common/Logo'
 import Warning from '@/components/Warning'
 import icon from '@/assets/icon.png'
-import { requestPermission, nonPersistentNotification } from '@/utils/notifications'
+import { requestPermission, nonPersistentNotification, persistentNotification } from '@/utils/notifications'
 
 export default {
   name: 'home',
@@ -113,7 +113,7 @@ export default {
       body: msg,
       icon: icon
     }
-    const result = nonPersistentNotification(options)
+    const result = nonPersistentNotification(options) || persistentNotification(options)
     console.log(result)
   }
 }
