@@ -83,6 +83,8 @@
 <script>
 import Logo from '@/components/common/Logo'
 import Warning from '@/components/Warning'
+import { requestPermission, nonPersistentNotification, persistentNotification } from '@/utils/notifications'
+
 export default {
   name: 'home',
   components: {
@@ -104,7 +106,11 @@ export default {
     }
   },
   created () {
+    requestPermission()
+    const msg = 'Welcome to FITTOC'
+    const result = persistentNotification(msg) || nonPersistentNotification(msg)
 
+    console.log(result)
   }
 }
 </script>
