@@ -1,10 +1,7 @@
 const state = {
   authenticated: false,
   token: localStorage.getItem('token') || null,
-  user: {
-    first: null,
-    last: null
-  },
+  user: null,
   status: null,
   apiError: null,
   apiMessage: null

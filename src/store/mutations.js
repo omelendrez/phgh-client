@@ -2,6 +2,7 @@ const mutations = {
   start_request (state) {
     state.status = 'loading'
     state.apiError = null
+    state.apiMessage = null
   },
   request_error (state, error) {
     state.status = 'error'

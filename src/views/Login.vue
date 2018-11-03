@@ -2,7 +2,7 @@
   <v-content>
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
-        <v-flex xs12 sm8 md4>
+        <v-flex xs12 sm8 md4 v-if="showLogin">
           <v-toolbar color="primary" dark>
             <v-toolbar-title>
               Login
@@ -30,7 +30,19 @@ export default {
   },
   data () {
     return {
-
+      showLogin: true
+    }
+  },
+  computed: {
+    user () {
+      return store.getters.user
+    }
+  },
+  watch: {
+    user () {
+      if (this.user) {
+        this.showLogin = false
+      }
     }
   },
   methods: {
@@ -39,7 +51,7 @@ export default {
     }
   },
   created () {
-
+    console.log(this.user)
   }
 }
 </script>

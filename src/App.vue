@@ -29,6 +29,7 @@
     </v-toolbar>
     <router-view />
     <Alert />
+    <Notification />
   </v-app>
 </template>
 <script>
@@ -36,12 +37,14 @@ import store from '@/store'
 import options from '@/options'
 import logo from '@/assets/icon.png'
 import Alert from '@/components/common/Alert'
+import Notification from '@/components/common/Notification'
 
 export default {
   name: 'app',
   store,
   components: {
-    Alert
+    Alert,
+    Notification
   },
   data () {
     return {
