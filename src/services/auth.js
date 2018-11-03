@@ -11,3 +11,15 @@ export const login = (user) => {
       })
   })
 }
+
+export const signup = (user) => {
+  return new Promise((resolve, reject) => {
+    HTTP.post('participants', user)
+      .then(resp => {
+        resolve(resp)
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
+}
