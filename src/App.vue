@@ -28,16 +28,21 @@
       <v-spacer v-else :key="option.index"></v-spacer>
     </v-toolbar>
     <router-view />
+    <Alert />
   </v-app>
 </template>
 <script>
 import store from '@/store'
 import options from '@/options'
 import logo from '@/assets/icon.png'
+import Alert from '@/components/common/Alert'
 
 export default {
   name: 'app',
   store,
+  components: {
+    Alert
+  },
   data () {
     return {
       options: [],
