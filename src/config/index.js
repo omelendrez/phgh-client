@@ -1,8 +1,3 @@
-require('dotenv').config()
-
-const CONFIG = {}
-
-CONFIG.app = process.env.APP || 'development'
-CONFIG.url = process.env.URL || 'http://localhost:3000/v1/'
+const CONFIG = { url: process.env.NODE_ENV === 'production' ? 'https://phgh-be.herokuapp.com/v1' : 'http://localhost:3000/v1/' }
 
 export { CONFIG }
