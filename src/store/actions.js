@@ -1,4 +1,4 @@
-import { login } from '@/services'
+import { login, signup } from '@/services'
 
 const handleError = err => {
   return err.response.data || {
@@ -24,6 +24,18 @@ const actions = {
   logout ({ commit }) {
     commit('logout')
     localStorage.removeItem('token')
+  },
+  async signup ({ commit }, user) {
+    commit('start_request')
+    signup(user)
+      .then(resp => {
+        const { user, message } = resp.data
+        commit('user_create_success', { user, message })
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
   }
 }
 

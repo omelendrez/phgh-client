@@ -9,7 +9,7 @@
             </v-toolbar-title>
             <Logo />
           </v-toolbar>
-          <RegisterForm />
+          <RegisterForm :signup="signup" />
         </v-flex>
       </v-layout>
     </v-container>
@@ -17,11 +17,13 @@
 </template>
 
 <script>
+import store from '@/store'
 import Logo from '@/components/common/Logo'
 import RegisterForm from '@/components/forms/RegisterForm.vue'
 
 export default {
   name: 'Signup',
+  store,
   components: {
     Logo,
     RegisterForm
@@ -29,6 +31,11 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    signup (user) {
+      store.dispatch('signup', user)
     }
   },
   created () {

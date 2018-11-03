@@ -21,7 +21,7 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn large color="primary" @click.native="signup">Register</v-btn>
+        <v-btn large color="primary" @click.native="doSignup">Register</v-btn>
       </v-card-actions>
 
     </v-container>
@@ -33,6 +33,9 @@ import { generateName } from '@/utils/usernames'
 
 export default {
   name: 'RegisterForm',
+  props: {
+    signup: Function
+  },
   data () {
     return {
       user: {
@@ -52,9 +55,9 @@ export default {
     this.rules = rules
   },
   methods: {
-    signup () {
+    doSignup () {
       if (this.valid) {
-        console.log(this.user)
+        this.signup(this.user)
       }
     },
     getName () {
