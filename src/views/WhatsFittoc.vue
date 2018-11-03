@@ -28,7 +28,7 @@
         <strong>
           <p>
             VERY IMPORTANT!
-            There is no central account, where all the money flows to (and where it can be easily stolen from :-)). All the money is distributed between the participants themselves! On a lot of thousands and millions of accounts. Participants transfer Local currency/Bitcoins directly to each other, without intermediaries! (What are they for? :-)) In fact, FITTOC only regulates the process and nothing more.
+            There is no central account, where all the money flows to (and where it can be easily stolen from :-)). All the money is distributed between the participants themselves! On a lot of thousands and millions of accounts. Participants transfer Local currency/Bitcoins directly to each other, without intermediaries! (What are they for? :-)) In fact, FITTOC only regulates the process and nothing more.
           </p>
           <p>
             I.e. the System completely belongs to people. Without fools! It is a real mutual aid fund, where ordinary people help each other.

@@ -13,7 +13,8 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn large color="primary" @click.native="login">Login</v-btn>
+        <Alert />
+        <v-btn large color="primary" @click.native="doLogin">Login</v-btn>
       </v-card-actions>
       <v-card-actions>
         <v-btn flat>Forgot password?</v-btn>
@@ -24,10 +25,17 @@
 
 <script>
 import { rules } from '@/utils/validation'
+import Alert from '@/components/common/Alert'
 
 export default {
   name: 'LoginForm',
-  data() {
+  components: {
+    Alert
+  },
+  props: {
+    login: Function
+  },
+  data () {
     return {
       valid: false,
       user: {
@@ -39,13 +47,13 @@ export default {
     }
   },
   methods: {
-    login() {
+    doLogin () {
       if (this.valid) {
-        console.log(this.user)
+        this.login(this.user)
       }
     }
   },
-  created() {
+  created () {
     this.rules = rules
   }
 }
