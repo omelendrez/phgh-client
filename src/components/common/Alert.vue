@@ -1,9 +1,18 @@
 <template>
-  <div class="alert">
-    <v-alert :value="active" :type="color" :dismissible="true" transition="scale-transition">
-      {{message}}
-    </v-alert>
-  </div>
+  <v-dialog v-model="active" max-width="400">
+    <v-card>
+      <v-card-title class="white--text headline error">{{title}}</v-card-title>
+      <v-card-text>
+        {{message}}
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn color="primary" flat="flat" @click="active = false">
+          Close
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
@@ -17,21 +26,17 @@ export default {
   },
   watch: {
     apiError () {
-      this.message = ''
-      this.active = false
-      this.color = 'success'
       if (this.apiError) {
+        this.title = 'Error'
         this.message = this.apiError.error
-        this.active = this.apiError.success === 'false'
-        this.color = 'error'
-        setTimeout(() => { this.active = false }, 5000)
+        this.active = !this.apiError.success
       }
     }
   },
   data () {
     return {
       active: false,
-      color: 'success',
+      title: '',
       message: ''
     }
   }
@@ -39,7 +44,4 @@ export default {
 </script>
 
 <style scoped>
-.alert {
-  position: absolute;
-}
 </style>
