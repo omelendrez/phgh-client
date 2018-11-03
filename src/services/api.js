@@ -1,5 +1,5 @@
 import axios from 'axios'
-const CONFIG = require('@/config')
+const { CONFIG } = require('@/config')
 
 const config = {
   baseURL: CONFIG.url

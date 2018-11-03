@@ -12,8 +12,8 @@
         </v-form>
       </v-card-text>
       <v-card-actions>
-        <v-spacer></v-spacer>
         <Alert />
+        <v-spacer></v-spacer>
         <v-btn large color="primary" @click.native="doLogin">Login</v-btn>
       </v-card-actions>
       <v-card-actions>

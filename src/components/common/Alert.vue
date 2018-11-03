@@ -1,6 +1,6 @@
 <template>
   <div class="alert">
-    <v-alert :value="active" :type="color" dismissible="true" transition="scale-transition">
+    <v-alert :value="active" :type="color" :dismissible="true" transition="scale-transition">
       {{message}}
     </v-alert>
   </div>
@@ -31,7 +31,7 @@ export default {
   data () {
     return {
       active: false,
-      color: 'primary',
+      color: 'success',
       message: ''
     }
   }

@@ -39,7 +39,7 @@ export default {
     }
   },
   created () {
-    console.log(store.getters.isAuthenticated)
+
   }
 }
 </script>
