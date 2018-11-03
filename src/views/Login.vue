@@ -9,7 +9,7 @@
             </v-toolbar-title>
             <Logo />
           </v-toolbar>
-          <LoginForm />
+          <LoginForm :login="login" />
         </v-flex>
       </v-layout>
     </v-container>
@@ -17,11 +17,13 @@
 </template>
 
 <script>
+import store from '@/store'
 import Logo from '@/components/common/Logo'
 import LoginForm from '@/components/forms/LoginForm.vue'
 
 export default {
   name: 'Login',
+  store,
   components: {
     Logo,
     LoginForm
@@ -31,8 +33,13 @@ export default {
 
     }
   },
+  methods: {
+    login (user) {
+      store.dispatch('login', user)
+    }
+  },
   created () {
-
+    console.log(store.getters.isAuthenticated)
   }
 }
 </script>

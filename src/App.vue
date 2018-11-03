@@ -32,7 +32,7 @@
 </template>
 <script>
 import store from '@/store'
-import options from '@/config'
+import options from '@/options'
 import logo from '@/assets/icon.png'
 
 export default {

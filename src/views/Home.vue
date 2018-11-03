@@ -114,7 +114,9 @@ export default {
       icon: icon,
       vibrate: [200, 100, 200]
     }
-    const result = nonPersistentNotification(options) || persistentNotification(options)
+    let result = nonPersistentNotification(options)
+    console.log(result)
+    result = persistentNotification(options)
     console.log(result)
   }
 }

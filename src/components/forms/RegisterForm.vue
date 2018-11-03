@@ -33,7 +33,7 @@ import { generateName } from '@/utils/usernames'
 
 export default {
   name: 'RegisterForm',
-  data() {
+  data () {
     return {
       user: {
         username: '',
@@ -48,16 +48,16 @@ export default {
       showRetype: false
     }
   },
-  created() {
+  created () {
     this.rules = rules
   },
   methods: {
-    signup() {
+    signup () {
       if (this.valid) {
         console.log(this.user)
       }
     },
-    getName() {
+    getName () {
       this.user.username = generateName().split(' ').join('')
     }
   }
