@@ -18,9 +18,8 @@ export default {
   },
   watch: {
     apiMessage () {
-      console.log(this.apiMessage)
       this.message = this.apiMessage
-      this.active = true
+      this.active = this.apiMessage
     }
   },
   data () {
