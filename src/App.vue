@@ -68,13 +68,15 @@ export default {
     user () {
       if (this.user) {
         this.username = this.user.username
-        const opt = this.options.filter(item => item.route !== 'Login' && item.route !== 'Signup')
-        opt.push({
-          title: 'Logout',
-          route: 'Logout',
-          icon: 'power_settings_new'
-        })
-        this.options = opt
+        if (this.user.emailVerified) {
+          const opt = this.options.filter(item => item.route !== 'Login' && item.route !== 'Signup')
+          opt.push({
+            title: 'Logout',
+            route: 'Logout',
+            icon: 'power_settings_new'
+          })
+          this.options = opt
+        }
       } else {
         this.username = ''
         this.options = options
