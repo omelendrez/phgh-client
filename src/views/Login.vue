@@ -40,9 +40,7 @@ export default {
   },
   watch: {
     user () {
-      if (this.user) {
-        this.showLogin = false
-      }
+      this.showLogin = !this.user
     }
   },
   methods: {

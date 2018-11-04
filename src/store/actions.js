@@ -1,4 +1,4 @@
-import { login, signup } from '@/services'
+import { login, signup, confirmEmail } from '@/services'
 
 const handleError = err => {
   return err.response.data || {
@@ -36,7 +36,20 @@ const actions = {
         handleError(err)
         commit('request_error', handleError(err))
       })
+  },
+  async confirmEmail ({ commit }, uid) {
+    commit('start_request')
+    confirmEmail(uid)
+      .then(resp => {
+        const { user, message } = resp.data
+        commit('user_confirm_success', { user, message })
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
   }
+
 }
 
 export default actions

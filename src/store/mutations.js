@@ -18,7 +18,7 @@ const mutations = {
   logout (state) {
     state.status = ''
     state.token = ''
-    state.user = { first: '', last: '' }
+    state.user = null
     state.apiMessage = 'You have loged out'
     state.authenticated = false
   },
@@ -26,6 +26,12 @@ const mutations = {
     state.status = 'success'
     state.user = user
     state.apiMessage = message
+  },
+  user_confirm_success (state, { user, message }) {
+    state.status = 'success'
+    state.user = user
+    state.apiMessage = message
+
   }
 }
 

@@ -26,6 +26,7 @@
         </v-btn>
       </v-toolbar-items>
       <v-spacer v-else :key="option.index"></v-spacer>
+      <span v-if="username">{{username}}</span>
     </v-toolbar>
     <router-view />
     <Alert />
@@ -51,7 +52,30 @@ export default {
       options: [],
       drawer: false,
       selected: null,
-      logo: null
+      logo: null,
+      username: ''
+    }
+  },
+  computed: {
+    user () {
+      return store.getters.user
+    }
+  },
+  watch: {
+    user () {
+      if (this.user) {
+        this.username = this.user.username
+        const opt = this.options.filter(item => item.route !== 'Login' && item.route !== 'Signup')
+        opt.push({
+          title: 'Logout',
+          route: 'Logout',
+          icon: 'power_settings_new'
+        })
+        this.options = opt
+      } else {
+        this.username = ''
+        this.options = options
+      }
     }
   },
   created () {
@@ -60,10 +84,16 @@ export default {
   },
   methods: {
     route (option) {
+      if (option.route === 'Logout') {
+        this.logout()
+      } else {
+        this.$router.push({ name: option.route })
+      }
       this.drawer = false
-      this.$router.push({ name: option.route })
+    },
+    logout () {
+      store.dispatch('logout')
     }
-
   }
 }
 </script>
