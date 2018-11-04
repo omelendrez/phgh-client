@@ -27,6 +27,7 @@ export default {
   watch: {
     apiError () {
       if (this.apiError) {
+        console.log(this.apiError)
         this.title = 'Error'
         this.message = this.apiError.error
         this.active = !this.apiError.success

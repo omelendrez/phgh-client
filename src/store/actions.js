@@ -1,9 +1,9 @@
 import { login, signup, confirmEmail } from '@/services'
 
 const handleError = err => {
-  return err.response.data || {
-    data: { error: 'There is a problem trying to connect to backend server' }
-  }
+  let error = { success: false, error: 'There is a problem trying to connect to backend server' }
+  if (err.response && err.response.data) error = err.response.data
+  return error
 }
 
 const actions = {
