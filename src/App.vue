@@ -31,6 +31,7 @@
     <router-view />
     <Alert />
     <Notification />
+    <Loading />
   </v-app>
 </template>
 <script>
@@ -39,13 +40,15 @@ import options from '@/options'
 import logo from '@/assets/icon.png'
 import Alert from '@/components/common/Alert'
 import Notification from '@/components/common/Notification'
+import Loading from '@/components/common/Loading'
 
 export default {
   name: 'app',
   store,
   components: {
     Alert,
-    Notification
+    Notification,
+    Loading
   },
   data () {
     return {

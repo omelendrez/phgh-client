@@ -2,7 +2,6 @@
   <v-card class="elevation-12">
     <v-card-text>
       <v-form v-model="valid" ref="form">
-
         <v-tabs slider-color="primary" icons-and-text glow centered v-model="currentTab">
           <v-tab>
             <v-icon>person</v-icon>
@@ -33,7 +32,8 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn large color="primary" @click.native="doLogin">Login</v-btn>
+      <v-btn large color="primary" @click.native="doLogin">Login
+      </v-btn>
     </v-card-actions>
     <v-card-actions>
       <v-btn flat>Forgot password?</v-btn>

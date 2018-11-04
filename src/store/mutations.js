@@ -31,7 +31,6 @@ const mutations = {
     state.status = 'success'
     state.user = user
     state.apiMessage = message
-
   }
 }
 
