@@ -19,3 +19,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+src/fcm.json
+src/phgh-c22c4-firebase-adminsdk-29zvd-01172e95dc.json

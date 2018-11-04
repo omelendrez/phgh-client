@@ -95,7 +95,7 @@
 
 <script>
 import Logo from '@/components/common/Logo'
-import Warning from '@/components/Warning'
+import Warning from '@/components/application/Warning'
 import img01 from '@/assets/img01.png'
 export default {
   name: 'WhatsFittoc',

@@ -21,7 +21,7 @@
             <v-icon>phone</v-icon>
           </v-tab>
           <v-tab-item>
-            <v-text-field prepend-icon="phone" v-model="user.phone" label="Phone" type="phone" mask="phone"></v-text-field>
+            <v-text-field prepend-icon="phone" v-model="user.phone" label="Phone" type="phone" :mask="rules.maskPhone"></v-text-field>
           </v-tab-item>
         </v-tabs>
 
