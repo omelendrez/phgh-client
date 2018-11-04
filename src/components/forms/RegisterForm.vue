@@ -9,7 +9,7 @@
 
           <v-text-field prepend-icon="mail" v-model="user.email" label="Email" type="email" :rules="[rules.required, rules.isEmail]" hint="Enter your email address"></v-text-field>
 
-          <v-text-field prepend-icon="phone" v-model="user.phone" label="Phone" type="phone" :rules="[rules.required, rules.isPhone]" hint="Enter your phone number" mask="phone"></v-text-field>
+          <v-text-field prepend-icon="phone" v-model="user.phone" label="Phone" type="phone" :rules="[rules.required, rules.isPhone]" hint="Enter your phone number" mask="(###) ###-#####"></v-text-field>
 
           <v-text-field prepend-icon="lock" v-model="user.password" label="Password" :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword" :rules="[rules.required, rules.min]" :append-icon="showPassword ? 'visibility_off' : 'visibility'" hint="At least 8 characters"> </v-text-field>
 
