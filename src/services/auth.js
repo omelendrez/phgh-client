@@ -23,3 +23,15 @@ export const signup = (user) => {
       })
   })
 }
+
+export const confirmEmail = (uid) => {
+  return new Promise((resolve, reject) => {
+    HTTP.post('participants/confirm', { uid: uid })
+      .then(resp => {
+        resolve(resp)
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
+}

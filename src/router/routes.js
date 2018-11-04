@@ -5,14 +5,19 @@ const routes = [
     component: 'Home'
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: 'Login'
-  },
-  {
     path: '/signup',
     name: 'Signup',
     component: 'Signup'
+  },
+  {
+    path: '/confirm/:uid',
+    name: 'Confirm',
+    component: 'Confirm'
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: 'Login'
   },
   {
     path: 'whats-fittoc',
