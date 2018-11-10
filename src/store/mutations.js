@@ -12,7 +12,6 @@ const mutations = {
     state.status = 'success'
     state.token = token
     state.user = user
-    state.apiMessage = message
     state.authenticated = true
   },
   logout (state) {
