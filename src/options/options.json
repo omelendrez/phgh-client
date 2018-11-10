@@ -7,12 +7,6 @@
             "public": true
         },
         {
-            "title": "Dashboard",
-            "route": "Dashboard",
-            "icon": "dashboard",
-            "public": false
-        },
-        {
             "title": "What's FITTOC",
             "route": "WhatsFittoc",
             "icon": "important_devices",
@@ -53,6 +47,54 @@
             "route": "Home",
             "icon": "email",
             "public": true
+        },
+        {
+            "title": "Dashboard",
+            "route": "Dashboard",
+            "icon": "dashboard",
+            "public": false
+        },
+        {
+            "title": "Accounts",
+            "route": "Accounts",
+            "icon": "account_balance",
+            "public": false
+        },
+        {
+            "title": "E-Money",
+            "route": "Emoney",
+            "icon": "money",
+            "public": false
+        },
+        {
+            "title": "My Status",
+            "route": "MyStatus",
+            "icon": "dns",
+            "public": false
+        },
+        {
+            "title": "News",
+            "route": "News",
+            "icon": "feedback",
+            "public": false
+        },
+        {
+            "title": "Referrals",
+            "route": "Referrals",
+            "icon": "group_work",
+            "public": false
+        },
+        {
+            "title": "Support",
+            "route": "Support",
+            "icon": "local_phone",
+            "public": false
+        },
+        {
+            "title": "Tasks",
+            "route": "Tasks",
+            "icon": "apps",
+            "public": false
         },
         {
             "title": "[separator]",
