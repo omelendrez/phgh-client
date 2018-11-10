@@ -34,3 +34,8 @@ export const persistentNotification = (options) => {
     return 'Notification API error: ' + err
   }
 }
+
+export const sendVibration = () => {
+  navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
+  navigator.vibrate([500, 300, 100])
+}
