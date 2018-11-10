@@ -62,29 +62,33 @@ export default {
   computed: {
     user () {
       return store.getters.user
+    },
+    isAuthenticated () {
+      return store.getters.isAuthenticated
     }
   },
   watch: {
     user () {
-      if (this.user) {
-        this.username = this.user.username
-        if (this.user.emailVerified) {
-          const opt = this.options.filter(item => item.route !== 'Login' && item.route !== 'Signup')
-          opt.push({
-            title: 'Logout',
-            route: 'Logout',
-            icon: 'power_settings_new'
-          })
-          this.options = opt
-        }
-      } else {
-        this.username = ''
-        this.options = options
+      let opt = []
+      this.username = (this.user && this.user.username) || ''
+      if (this.user && this.user.emailVerified) {
+        opt = options.filter(item => !item.public || item.isSeparator)
+        this.options = opt
+        return
+      }
+      opt = options.filter(item => item.public || item.isSeparator)
+      this.options = opt
+    },
+    isAuthenticated () {
+      if (!this.isAuthenticated) {
+        this.$router.push({ name: 'Login' })
       }
     }
   },
   created () {
-    this.options = options
+    this.username = ''
+    const opt = options.filter(item => item.public || item.isSeparator)
+    this.options = opt
     this.logo = logo
   },
   methods: {

@@ -3,55 +3,78 @@
         {
             "title": "Home",
             "route": "Home",
-            "icon": "home"
+            "icon": "home",
+            "public": true
+        },
+        {
+            "title": "Dashboard",
+            "route": "Dashboard",
+            "icon": "dashboard",
+            "public": false
         },
         {
             "title": "What's FITTOC",
             "route": "WhatsFittoc",
-            "icon": "important_devices"
+            "icon": "important_devices",
+            "public": true
         },
         {
             "title": "Ideology",
             "route": "Ideology",
-            "icon": "all_inclusive"
+            "icon": "all_inclusive",
+            "public": true
         },
         {
             "title": "FAQ",
             "route": "Faq",
-            "icon": "help"
+            "icon": "help",
+            "public": true
         },
         {
             "title": "FITTOC Universal",
             "route": "Universal",
-            "icon": "language"
+            "icon": "language",
+            "public": true
         },
         {
             "title": "Charity",
             "route": "Charity",
-            "icon": "redeem"
+            "icon": "redeem",
+            "public": true
         },
         {
             "title": "Testimonials",
             "route": "Testimonials",
-            "icon": "record_voice_over"
+            "icon": "record_voice_over",
+            "public": true
         },
         {
             "title": "Contact",
             "route": "Home",
-            "icon": "email"
+            "icon": "email",
+            "public": true
         },
         {
-            "title": "[separator]"
+            "title": "[separator]",
+            "isSeparator": true
         },
         {
             "title": "Signup",
             "route": "Signup",
-            "icon": "how_to_reg"
+            "icon": "how_to_reg",
+            "public": true
         },
         {
             "title": "Login",
             "route": "Login",
-            "icon": "person"
+            "icon": "person",
+            "public": true
+        },
+        {
+            "title": "Logout",
+            "route": "Logout",
+            "icon": "power_settings_new",
+            "public": false
         }
     ]
 }
