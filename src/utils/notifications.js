@@ -37,5 +37,6 @@ export const persistentNotification = (options) => {
 
 export const sendVibration = () => {
   navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
-  navigator.vibrate([500, 300, 100])
+  navigator.vibrate([100, 200, 200])
+
 }
