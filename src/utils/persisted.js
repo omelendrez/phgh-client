@@ -16,7 +16,3 @@ export const getValue = (item) => {
   }
 }
 
-export function sendVibration () {
-  navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
-  navigator.vibrate([500, 300, 100])
-}

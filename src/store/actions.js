@@ -1,6 +1,8 @@
 import { login, signup, confirmEmail } from '@/services'
+import { sendVibration } from '@/utils/notifications'
 
 const handleError = err => {
+  sendVibration()
   let error = { success: false, error: 'There is a problem trying to connect to backend server' }
   if (err.response && err.response.data) error = err.response.data
   return error
