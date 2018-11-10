@@ -43,7 +43,7 @@
 
 <script>
 import { rules } from '@/utils/validation'
-import { getTab, saveTab } from '@/utils/persisted'
+import { getValue, saveValue } from '@/utils/persisted'
 export default {
   name: 'LoginForm',
   props: {
@@ -67,16 +67,19 @@ export default {
     doLogin () {
       if (this.valid) {
         const user = {}
-        saveTab(this.currentTab)
+        saveValue('currentTab', this.currentTab)
         switch (this.currentTab) {
           case 1:
             user.email = this.user.email
+            saveValue('user', this.user.email)
             break
           case 2:
             user.phone = this.user.phone
+            saveValue('user', this.user.phone)
             break
           default:
             user.username = this.user.username
+            saveValue('user', this.user.username)
         }
         user.password = this.user.password
         this.login(user)
@@ -89,7 +92,17 @@ export default {
   },
   created () {
     this.rules = rules
-    this.currentTab = parseInt(getTab())
+    this.currentTab = parseInt(getValue('currentTab'))
+    switch (this.currentTab) {
+      case 1:
+        this.user.email = getValue('user')
+        break
+      case 2:
+        this.user.phone = getValue('user')
+        break
+      default:
+        this.user.username = getValue('user')
+    }
   }
 }
 </script>
