@@ -43,7 +43,7 @@
 
 <script>
 import { rules } from '@/utils/validation'
-
+import { getTab, saveTab } from '@/utils/persisted'
 export default {
   name: 'LoginForm',
   props: {
@@ -67,6 +67,7 @@ export default {
     doLogin () {
       if (this.valid) {
         const user = {}
+        saveTab(this.currentTab)
         switch (this.currentTab) {
           case 1:
             user.email = this.user.email
@@ -88,6 +89,7 @@ export default {
   },
   created () {
     this.rules = rules
+    this.currentTab = parseInt(getTab())
   }
 }
 </script>
