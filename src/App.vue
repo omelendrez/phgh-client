@@ -41,6 +41,7 @@ import logo from '@/assets/icon.png'
 import Alert from '@/components/common/Alert'
 import Notification from '@/components/common/Notification'
 import Loading from '@/components/common/Loading'
+import NProgress from 'nprogress'
 
 export default {
   name: 'app',
@@ -65,6 +66,9 @@ export default {
     },
     isAuthenticated () {
       return store.getters.isAuthenticated
+    },
+    status () {
+      return store.getters.status
     }
   },
   watch: {
@@ -82,6 +86,15 @@ export default {
     isAuthenticated () {
       if (!this.isAuthenticated) {
         this.$router.push({ name: 'Login' })
+      }
+    },
+    status () {
+      if (this.status === 'loading') {
+        console.log('started')
+        NProgress.start()
+      } else {
+        console.log('ended')
+        NProgress.done()
       }
     }
   },
