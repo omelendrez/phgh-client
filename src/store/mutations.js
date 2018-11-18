@@ -8,10 +8,11 @@ const mutations = {
     state.status = 'error'
     state.apiError = error
   },
-  auth_success (state, { token, user, message }) {
+  auth_success (state, { token, user, message, accounts }) {
     state.status = 'success'
     state.token = token
     state.user = user
+    state.user.accounts = accounts
     state.authenticated = true
   },
   logout (state) {
