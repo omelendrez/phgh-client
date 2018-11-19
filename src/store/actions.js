@@ -1,4 +1,10 @@
-import { login, signup, confirmEmail } from '@/services'
+import {
+  login,
+  signup,
+  confirmEmail,
+  addAccount,
+  getUserAccounts
+} from '@/services'
 import { sendVibration } from '@/utils/notifications'
 
 const handleError = err => {
@@ -12,7 +18,7 @@ const handleError = err => {
 }
 
 const actions = {
-  async login ({ commit }, user) {
+  async login({ commit }, user) {
     commit('start_request')
     login(user)
       .then(resp => {
@@ -26,11 +32,11 @@ const actions = {
         localStorage.removeItem('token')
       })
   },
-  logout ({ commit }) {
+  logout({ commit }) {
     commit('logout')
     localStorage.removeItem('token')
   },
-  async signup ({ commit }, user) {
+  async signup({ commit }, user) {
     commit('start_request')
     signup(user)
       .then(resp => {
@@ -41,11 +47,33 @@ const actions = {
         commit('request_error', handleError(err))
       })
   },
-  async confirmEmail ({ commit }, uid) {
+  async confirmEmail({ commit }, uid) {
     commit('start_request')
     confirmEmail(uid)
       .then(resp => {
         commit('user_confirm_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async addAccount({ commit }, account) {
+    commit('start_request')
+    addAccount(account)
+      .then(resp => {
+        commit('account_create_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async loadUserAccounts({ commit }, user) {
+    commit('start_request')
+    getUserAccounts(user)
+      .then(resp => {
+        commit('accounts_list_success', resp.data)
       })
       .catch(err => {
         handleError(err)

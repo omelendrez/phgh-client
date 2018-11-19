@@ -308,5 +308,11 @@
       "name": "ZENITH MOBILE",
       "code": "322"
     }
+  ],
+  "status": [
+    {
+      "status": 0,
+      "description": "Not verified"
+    }
   ]
 }

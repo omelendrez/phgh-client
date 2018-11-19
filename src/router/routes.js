@@ -53,6 +53,11 @@ const routes = [
     path: 'testimonials',
     name: 'Testimonials',
     component: 'Testimonials'
+  },
+  {
+    path: 'accounts',
+    name: 'Accounts',
+    component: 'Accounts'
   }
 ]
 
