@@ -41,7 +41,6 @@ import logo from '@/assets/icon.png'
 import Alert from '@/components/common/Alert'
 import Notification from '@/components/common/Notification'
 import Loading from '@/components/common/Loading'
-import NProgress from 'nprogress'
 
 export default {
   name: 'app',
@@ -91,10 +90,8 @@ export default {
     status () {
       if (this.status === 'loading') {
         console.log('started')
-        NProgress.start()
       } else {
         console.log('ended')
-        NProgress.done()
       }
     }
   },
