@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     hide-actions
-    :items="accounts"
+    :items="items"
     :headers="headers"
     class="elevation-1"
   >
@@ -32,7 +32,8 @@ export default {
         { text: 'Account Holder', sortable: false, value: 'accountHolderName' },
         { text: 'NUBAN', sortable: true, value: 'NUBAN' },
         { text: 'Status', sortable: false, value: 'status' }
-      ]
+      ],
+      items: []
     }
   },
   watch: {
@@ -43,6 +44,7 @@ export default {
           item.status = status.find(st => st.status === item.status).description
           return item
         })
+        this.items = items
       }
     }
   }
