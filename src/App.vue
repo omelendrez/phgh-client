@@ -65,6 +65,9 @@ export default {
     },
     isAuthenticated () {
       return store.getters.isAuthenticated
+    },
+    status () {
+      return store.getters.status
     }
   },
   watch: {
@@ -82,6 +85,13 @@ export default {
     isAuthenticated () {
       if (!this.isAuthenticated) {
         this.$router.push({ name: 'Login' })
+      }
+    },
+    status () {
+      if (this.status === 'loading') {
+        console.log('started')
+      } else {
+        console.log('ended')
       }
     }
   },

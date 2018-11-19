@@ -1,21 +1,30 @@
-import { login, signup, confirmEmail } from '@/services'
+import {
+  login,
+  signup,
+  confirmEmail,
+  addAccount,
+  getUserAccounts
+} from '@/services'
 import { sendVibration } from '@/utils/notifications'
 
 const handleError = err => {
   sendVibration()
-  let error = { success: false, error: 'There is a problem trying to connect to backend server' }
+  let error = {
+    success: false,
+    error: 'There is a problem trying to connect to backend server'
+  }
   if (err.response && err.response.data) error = err.response.data
   return error
 }
 
 const actions = {
-  async login ({ commit }, user) {
+  async login({ commit }, user) {
     commit('start_request')
     login(user)
       .then(resp => {
-        const { token, user, message } = resp.data
+        const { token } = resp.data
         localStorage.setItem('token', token)
-        commit('auth_success', { token, user, message })
+        commit('auth_success', resp.data)
       })
       .catch(err => {
         handleError(err)
@@ -23,35 +32,54 @@ const actions = {
         localStorage.removeItem('token')
       })
   },
-  logout ({ commit }) {
+  logout({ commit }) {
     commit('logout')
     localStorage.removeItem('token')
   },
-  async signup ({ commit }, user) {
+  async signup({ commit }, user) {
     commit('start_request')
     signup(user)
       .then(resp => {
-        const { user, message } = resp.data
-        commit('user_create_success', { user, message })
+        commit('user_create_success', resp.data)
       })
       .catch(err => {
         handleError(err)
         commit('request_error', handleError(err))
       })
   },
-  async confirmEmail ({ commit }, uid) {
+  async confirmEmail({ commit }, uid) {
     commit('start_request')
     confirmEmail(uid)
       .then(resp => {
-        const { user, message } = resp.data
-        commit('user_confirm_success', { user, message })
+        commit('user_confirm_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async addAccount({ commit }, account) {
+    commit('start_request')
+    addAccount(account)
+      .then(resp => {
+        commit('account_create_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async loadUserAccounts({ commit }, user) {
+    commit('start_request')
+    getUserAccounts(user)
+      .then(resp => {
+        commit('accounts_list_success', resp.data)
       })
       .catch(err => {
         handleError(err)
         commit('request_error', handleError(err))
       })
   }
-
 }
 
 export default actions
