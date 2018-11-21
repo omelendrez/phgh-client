@@ -34,6 +34,15 @@ const mutations = {
     state.status = 'success'
     state.user = user
     state.apiMessage = message
+  },
+  account_create_success(state, { account, message }) {
+    state.status = 'success'
+    state.account = account
+    state.apiMessage = message
+  },
+  accounts_list_success(state, { accounts }) {
+    state.status = 'success'
+    state.accounts = accounts
   }
 }
 

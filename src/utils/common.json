@@ -1,0 +1,318 @@
+{
+  "banks": [
+    {
+      "name": "ACCESS BANK",
+      "code": "044"
+    },
+    {
+      "name": "ACCESSMOBILE",
+      "code": "323"
+    },
+    {
+      "name": "ASO SAVINGS AND LOANS",
+      "code": "401"
+    },
+    {
+      "name": "CELLULANT",
+      "code": "317"
+    },
+    {
+      "name": "CENTRAL BANK OF NIGERIA",
+      "code": "001"
+    },
+    {
+      "name": "CITIBANK",
+      "code": "023"
+    },
+    {
+      "name": "CORONATION MERCHANT BANK",
+      "code": "559"
+    },
+    {
+      "name": "CORPORETTI",
+      "code": "310"
+    },
+    {
+      "name": "COVENANT MICROFINANCE BANK",
+      "code": "551"
+    },
+    {
+      "name": "DIAMOND BANK",
+      "code": "063"
+    },
+    {
+      "name": "EARTHOLEUM (QIK QIK)",
+      "code": "302"
+    },
+    {
+      "name": "ECOBANK NIGERIA",
+      "code": "050"
+    },
+    {
+      "name": "ECOMOBILE",
+      "code": "307"
+    },
+    {
+      "name": "EKONDO MICROFINANCE BANK",
+      "code": "562"
+    },
+    {
+      "name": "ENTERPRISE BANK",
+      "code": "084"
+    },
+    {
+      "name": "EQUITORIAL TRUST BANK",
+      "code": "040"
+    },
+    {
+      "name": "E-TRANZACT",
+      "code": "306"
+    },
+    {
+      "name": "FBN M-MONEY",
+      "code": "309"
+    },
+    {
+      "name": "FBN MORTGAGES",
+      "code": "413"
+    },
+    {
+      "name": "FETS (MY WALLET)",
+      "code": "314"
+    },
+    {
+      "name": "FIDELITY BANK",
+      "code": "070"
+    },
+    {
+      "name": "FIDELITY MOBILE",
+      "code": "318"
+    },
+    {
+      "name": "FINATRUST MICROFINANCE BANK",
+      "code": "608"
+    },
+    {
+      "name": "FIRST BANK OF NIGERIA",
+      "code": "011"
+    },
+    {
+      "name": "FIRST CITY MONUMENT BANK",
+      "code": "214"
+    },
+    {
+      "name": "FIRST INLAND BANK",
+      "code": "085"
+    },
+    {
+      "name": "FORTIS MICROFINANCE BANK",
+      "code": "501"
+    },
+    {
+      "name": "FORTIS MOBILE",
+      "code": "308"
+    },
+    {
+      "name": "FSDH",
+      "code": "601"
+    },
+    {
+      "name": "GT MOBILE MONEY",
+      "code": "315"
+    },
+    {
+      "name": "GUARANTY TRUST BANK",
+      "code": "058"
+    },
+    {
+      "name": "HEDONMARK",
+      "code": "324"
+    },
+    {
+      "name": "HERITAGE BANK",
+      "code": "030"
+    },
+    {
+      "name": "IMPERIAL HOMES MORTGAGE BANK",
+      "code": "415"
+    },
+    {
+      "name": "INTERCONTINENTAL BANK",
+      "code": "069"
+    },
+    {
+      "name": "JAIZ BANK",
+      "code": "301"
+    },
+    {
+      "name": "JUBILEE LIFE",
+      "code": "402"
+    },
+    {
+      "name": "KEGOW",
+      "code": "303"
+    },
+    {
+      "name": "KEYSTONE BANK",
+      "code": "082"
+    },
+    {
+      "name": "MAINSTREET BANK",
+      "code": "014"
+    },
+    {
+      "name": "MIMONEY (POWERED BY INTELLIFIN)",
+      "code": "330"
+    },
+    {
+      "name": "M-KUDI",
+      "code": "313"
+    },
+    {
+      "name": "MONETIZE",
+      "code": "312"
+    },
+    {
+      "name": "MONEYBOX",
+      "code": "325"
+    },
+    {
+      "name": "NEW PRUDENTIAL BANK",
+      "code": "561"
+    },
+    {
+      "name": "NPF MFB",
+      "code": "552"
+    },
+    {
+      "name": "OCEANIC BANK",
+      "code": "056"
+    },
+    {
+      "name": "OMOLUABI SAVINGS AND LOANS",
+      "code": "606"
+    },
+    {
+      "name": "ONE FINANCE",
+      "code": "565"
+    },
+    {
+      "name": "PAGA",
+      "code": "327"
+    },
+    {
+      "name": "PAGE MFBANK",
+      "code": "560"
+    },
+    {
+      "name": "PARALLEX",
+      "code": "502"
+    },
+    {
+      "name": "PARKWAY (READY CASH)",
+      "code": "311"
+    },
+    {
+      "name": "PAYATTITUDE ONLINE",
+      "code": "329"
+    },
+    {
+      "name": "PAYCOM",
+      "code": "304"
+    },
+    {
+      "name": "PROVIDUS BANK",
+      "code": "101"
+    },
+    {
+      "name": "SAFETRUST MORTGAGE BANK",
+      "code": "403"
+    },
+    {
+      "name": "SEED CAPITAL MICROFINANCE BANK",
+      "code": "609"
+    },
+    {
+      "name": "SKYE BANK",
+      "code": "076"
+    },
+    {
+      "name": "STANBIC IBTC BANK",
+      "code": "221"
+    },
+    {
+      "name": "STANBIC MOBILE",
+      "code": "304"
+    },
+    {
+      "name": "STANDARD CHARTERED BANK",
+      "code": "068"
+    },
+    {
+      "name": "STERLING BANK",
+      "code": "232"
+    },
+    {
+      "name": "STERLING MOBILE",
+      "code": "326"
+    },
+    {
+      "name": "SUNTRUST",
+      "code": "100"
+    },
+    {
+      "name": "TEASY MOBILE",
+      "code": "319"
+    },
+    {
+      "name": "TRUSTBOND",
+      "code": "523"
+    },
+    {
+      "name": "U-MO",
+      "code": "316"
+    },
+    {
+      "name": "UNION BANK OF NIGERIA",
+      "code": "032"
+    },
+    {
+      "name": "UNITED BANK FOR AFRICA",
+      "code": "033"
+    },
+    {
+      "name": "UNITY BANK",
+      "code": "215"
+    },
+    {
+      "name": "VFD MICROFINANCE BANK",
+      "code": "566"
+    },
+    {
+      "name": "VISUAL ICT",
+      "code": "328"
+    },
+    {
+      "name": "VTNETWORK",
+      "code": "320"
+    },
+    {
+      "name": "WEMA BANK",
+      "code": "035"
+    },
+    {
+      "name": "ZENITH BANK",
+      "code": "057"
+    },
+    {
+      "name": "ZENITH MOBILE",
+      "code": "322"
+    }
+  ],
+  "status": [
+    {
+      "status": 0,
+      "description": "Not verified"
+    }
+  ]
+}
