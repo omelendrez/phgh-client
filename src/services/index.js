@@ -1,4 +1,11 @@
-import { login, signup, confirmEmail } from './auth'
+import { login, signup, confirmEmail, forgotPassword } from './auth'
 import { addAccount, getUserAccounts } from './account'
 
-export { login, signup, confirmEmail, addAccount, getUserAccounts }
+export {
+  login,
+  signup,
+  forgotPassword,
+  confirmEmail,
+  addAccount,
+  getUserAccounts
+}
