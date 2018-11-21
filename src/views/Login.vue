@@ -9,7 +9,7 @@
             </v-toolbar-title>
             <Logo />
           </v-toolbar>
-          <LoginForm :login="login" />
+          <LoginForm :login="login" :forgotPassword="forgotPassword" />
         </v-flex>
       </v-layout>
     </v-container>
@@ -28,28 +28,28 @@ export default {
     Logo,
     LoginForm
   },
-  data () {
+  data() {
     return {
       showForm: true
     }
   },
   computed: {
-    user () {
+    user() {
       return store.getters.user
     }
   },
   watch: {
-    user () {
+    user() {
       this.showForm = !this.user
     }
   },
   methods: {
-    login (user) {
+    login(user) {
       store.dispatch('login', user)
+    },
+    forgotPassword(user) {
+      store.dispatch('forgotPassword', user)
     }
-  },
-  created () {
-
   }
 }
 </script>

@@ -24,6 +24,18 @@ export const signup = (user) => {
   })
 }
 
+export const forgotPassword = (user) => {
+  return new Promise((resolve, reject) => {
+    HTTP.post('participants/forgot-password', user)
+      .then(resp => {
+        resolve(resp)
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
+}
+
 export const confirmEmail = (uid) => {
   return new Promise((resolve, reject) => {
     HTTP.post('participants/confirm', { uid: uid })
