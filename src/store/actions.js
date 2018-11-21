@@ -1,10 +1,4 @@
-import {
-  login,
-  signup,
-  confirmEmail,
-  addAccount,
-  getUserAccounts
-} from '@/services'
+import { login, signup, confirmEmail, forgotPassword } from '@/services'
 import { sendVibration } from '@/utils/notifications'
 
 const handleError = err => {
@@ -36,7 +30,19 @@ const actions = {
     commit('logout')
     localStorage.removeItem('token')
   },
-  async signup({ commit }, user) {
+  async forgotPassword ({ commit }, user) {
+    commit('start_request')
+    forgotPassword(user)
+      .then(resp => {
+        const { message } = resp.data
+        commit('forgot_password_success', { message })
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async signup ({ commit }, user) {
     commit('start_request')
     signup(user)
       .then(resp => {

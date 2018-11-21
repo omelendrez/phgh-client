@@ -14,6 +14,10 @@ const mutations = {
     state.user = user
     state.authenticated = true
   },
+  forgot_password_success(state, { user, message }) {
+    state.status = 'success'
+    state.apiMessage = message
+  },
   logout(state) {
     state.status = ''
     state.token = ''

@@ -7,7 +7,7 @@
             <v-icon>person</v-icon>
           </v-tab>
           <v-tab-item>
-            <v-text-field prepend-icon="person" v-model="user.username" label="Username" type="text"></v-text-field>
+            <v-text-field prepend-icon="person" v-model="user.username" label="Username" type="text"  :rules="[rules.minUser]"></v-text-field>
           </v-tab-item>
 
           <v-tab>
@@ -25,7 +25,7 @@
           </v-tab-item>
         </v-tabs>
 
-        <v-text-field ref="pass" prepend-icon="lock" v-model="user.password" label="Password" :append-icon="showPassword ? 'visibility_off' : 'visibility'" :type="showPassword ? 'text' : 'password'" :rules="[rules.required, rules.min]" @click:append="showPassword = !showPassword">
+        <v-text-field ref="pass" prepend-icon="lock" v-model="user.password" label="Password" :append-icon="showPassword ? 'visibility_off' : 'visibility'" :type="showPassword ? 'text' : 'password'" :rules="[rules.required, rules.minPass]" @click:append="showPassword = !showPassword">
         </v-text-field>
 
       </v-form>
@@ -36,7 +36,7 @@
       </v-btn>
     </v-card-actions>
     <v-card-actions>
-      <v-btn flat>Forgot password?</v-btn>
+      <v-btn flat @click.native="doForgotPassword">Forgot password?</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -47,9 +47,16 @@ import { getValue, saveValue } from '@/utils/persisted'
 export default {
   name: 'LoginForm',
   props: {
-    login: Function
+    login: {
+      type: Function,
+      default: undefined
+    },
+    forgotPassword: {
+      type: Function,
+      default: undefined
+    }
   },
-  data () {
+  data() {
     return {
       valid: false,
       currentTab: null,
@@ -64,7 +71,7 @@ export default {
     }
   },
   methods: {
-    doLogin () {
+    doLogin() {
       if (this.valid) {
         const user = {}
         saveValue('currentTab', this.currentTab)
@@ -88,9 +95,24 @@ export default {
           this.$refs.pass.focus()
         }
       }
+    },
+    doForgotPassword() {
+      const user = {}
+      switch (this.currentTab) {
+        case 1:
+          user.email = this.user.email
+          break
+        case 2:
+          user.phone = this.user.phone
+          break
+        default:
+          user.username = this.user.username
+      }
+      console.log(user)
+      this.forgotPassword(user)
     }
   },
-  created () {
+  created() {
     this.rules = rules
     this.currentTab = parseInt(getValue('currentTab'))
     switch (this.currentTab) {
