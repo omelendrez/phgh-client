@@ -6,6 +6,9 @@
         <Logo />
       </v-card-title>
       <v-card-text>
+        <p>
+        FITTOC is a global mutual aid fund, financial social network. FITTOC isn’t a company, an organization or a business project. FITTOC has its own website which connects participants who are willing to provide help directly with those who need help. The participants transfer money directly to each other, acting of their own free will. There aren’t any obligations and guarantees. If you have any other questions, please contact our Guiders/Leaders. They are always ready to help you.
+        </p>
         <HowToStart v-if="!user" />
       </v-card-text>
     </v-card>
@@ -27,11 +30,11 @@ export default {
     HowToStart
   },
   computed: {
-    user () {
+    user() {
       return store.getters.user
     }
   },
-  created () {
+  created() {
     /*
     requestPermission()
     const msg = 'Together We Shall Be Financially Free'
