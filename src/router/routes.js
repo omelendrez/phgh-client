@@ -25,39 +25,44 @@ const routes = [
     component: 'Login'
   },
   {
-    path: 'whats-fittoc',
+    path: '/whats-fittoc',
     name: 'WhatsFittoc',
     component: 'WhatsFittoc'
   },
   {
-    path: 'ideology',
+    path: '/ideology',
     name: 'Ideology',
     component: 'Ideology'
   },
   {
-    path: 'faq',
+    path: '/faq',
     name: 'Faq',
     component: 'Faq'
   },
   {
-    path: 'universal',
+    path: '/universal',
     name: 'Universal',
     component: 'Universal'
   },
   {
-    path: 'charity',
+    path: '/charity',
     name: 'Charity',
     component: 'Charity'
   },
   {
-    path: 'testimonials',
+    path: '/testimonials',
     name: 'Testimonials',
     component: 'Testimonials'
   },
   {
-    path: 'accounts',
+    path: '/accounts',
     name: 'Accounts',
     component: 'Accounts'
+  },
+  {
+    path: '/reset-password/:uid',
+    name: 'ResetPassword',
+    component: 'ResetPassword'
   }
 ]
 

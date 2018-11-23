@@ -6,6 +6,7 @@ const state = {
   apiError: null,
   apiMessage: null,
   account: null,
-  accounts: []
+  accounts: [],
+  passwordResetted: null
 }
 export default state

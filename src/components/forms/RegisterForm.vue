@@ -13,7 +13,7 @@
 
           <v-text-field prepend-icon="lock" v-model="user.password" label="Password" :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword" :rules="[rules.required, rules.minPass]" :append-icon="showPassword ? 'visibility_off' : 'visibility'" hint="At least 8 characters"> </v-text-field>
 
-          <v-text-field prepend-icon="lock" v-model="retype" label="Confirm password" :append-icon="showRetype ? 'visibility_off' : 'visibility'" hint="Must match the password" :type="showRetype ? 'text' : 'password'" :rules="[rules.required, rules.min, rules.equal(user.password, retype)]" @click:append="showRetype = !showRetype">
+          <v-text-field prepend-icon="lock" v-model="retype" label="Confirm password" :append-icon="showRetype ? 'visibility_off' : 'visibility'" hint="Must match the password" :type="showRetype ? 'text' : 'password'" :rules="[rules.required, rules.equal(user.password, retype)]" @click:append="showRetype = !showRetype">
           </v-text-field>
 
         </v-form>

@@ -50,7 +50,7 @@ export default {
     Notification,
     Loading
   },
-  data () {
+  data() {
     return {
       options: [],
       drawer: false,
@@ -60,18 +60,18 @@ export default {
     }
   },
   computed: {
-    user () {
+    user() {
       return store.getters.user
     },
-    isAuthenticated () {
+    isAuthenticated() {
       return store.getters.isAuthenticated
     },
-    status () {
+    status() {
       return store.getters.status
     }
   },
   watch: {
-    user () {
+    user() {
       let opt = []
       this.username = (this.user && this.user.username) || ''
       if (this.user && this.user.emailVerified) {
@@ -82,12 +82,12 @@ export default {
       opt = options.filter(item => item.public || item.isSeparator)
       this.options = opt
     },
-    isAuthenticated () {
+    isAuthenticated() {
       if (!this.isAuthenticated) {
         this.$router.push({ name: 'Login' })
       }
     },
-    status () {
+    status() {
       if (this.status === 'loading') {
         console.log('started')
       } else {
@@ -95,14 +95,13 @@ export default {
       }
     }
   },
-  created () {
+  created() {
     this.username = ''
-    const opt = options.filter(item => item.public || item.isSeparator)
-    this.options = opt
+    this.options = options.filter(item => item.public || item.isSeparator)
     this.logo = logo
   },
   methods: {
-    route (option) {
+    route(option) {
       if (option.route === 'Logout') {
         this.logout()
       } else {
@@ -110,7 +109,7 @@ export default {
       }
       this.drawer = false
     },
-    logout () {
+    logout() {
       store.dispatch('logout')
     }
   }
