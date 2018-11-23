@@ -43,6 +43,11 @@ const mutations = {
   accounts_list_success(state, { accounts }) {
     state.status = 'success'
     state.accounts = accounts
+  },
+
+  reset_password_success(state) {
+    state.status = 'success'
+    state.passwordResetted = true
   }
 }
 

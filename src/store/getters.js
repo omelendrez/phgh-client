@@ -5,7 +5,7 @@ const getters = {
   apiError: state => state.apiError,
   apiMessage: state => state.apiMessage,
   account: state => state.account,
-  accounts: state => state.accounts
+  accounts: state => state.accounts,
+  passwordResetted: state => state.passwordResetted
 }
-
 export default getters
