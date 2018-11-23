@@ -13,7 +13,7 @@
         </v-flex>
         <v-flex v-else xs12 sm8 md4>
           <v-card>
-            <v-card-title primary-title class="headline green lighten-3">What's next?
+            <v-card-title primary-title class="headline green lighten-3">Password changed
               <Logo />
             </v-card-title>
             <v-card-text>
