@@ -70,6 +70,10 @@ export default {
     }
   },
   created() {
+    if (!this.user) {
+      this.$router.push({ name: 'Login' })
+      return
+    }
     store.dispatch('loadUserAccounts', this.user)
   }
 }
