@@ -1,7 +1,7 @@
 <template>
   <v-content>
     <v-container v-show="!showForm">
-      <AccountsTable :accounts="items" class="accounts" />
+      <AccountsTable :accounts="items" :deleteAccount="deleteAccount" class="accounts" />
       <v-btn color="primary" @click="showForm = !showForm">Add account</v-btn>
     </v-container>
     <v-container fill-height>
@@ -13,10 +13,11 @@
             </v-toolbar-title>
             <Logo />
           </v-toolbar>
-          <AccountsForm :addAccount="addAccount" :closeForm="closeForm" />
+          <AccountsForm :addAccount="addAccount" :item="item" :closeForm="closeForm" />
         </v-flex>
       </v-layout>
     </v-container>
+    <Confirm :confirm="confirm" :title="title" :message="message" :active="showConfirm" />
   </v-content>
 </template>
 
@@ -25,6 +26,7 @@ import store from '@/store'
 import Logo from '@/components/common/Logo'
 import AccountsTable from '@/components/forms/AccountsTable.vue'
 import AccountsForm from '@/components/forms/AccountsForm.vue'
+import Confirm from '@/components/common/Confirm.vue'
 
 export default {
   name: 'Accounts',
@@ -32,7 +34,8 @@ export default {
   components: {
     Logo,
     AccountsForm,
-    AccountsTable
+    AccountsTable,
+    Confirm
   },
   computed: {
     user() {
@@ -59,17 +62,35 @@ export default {
       user.participantId = this.user.id
       store.dispatch('addAccount', user)
     },
+    deleteAccount(account) {
+      this.showConfirm = true
+      this.delAccount = account
+    },
     closeForm() {
       this.showForm = false
+    },
+    confirm(deleteAccount) {
+      this.showConfirm = false
+      if (deleteAccount) {
+        store.dispatch('deleteAccount', this.delAccount)
+      }
     }
   },
   data() {
     return {
       showForm: false,
-      items: []
+      items: [],
+      showConfirm: false,
+      delAccount: {},
+      title: 'Delete account',
+      message: 'Are you sure you want to delete this account?'
     }
   },
   created() {
+    if (!this.user) {
+      this.$router.push({ name: 'Login' })
+      return
+    }
     store.dispatch('loadUserAccounts', this.user)
   }
 }

@@ -3,8 +3,12 @@ import {
   signup,
   confirmEmail,
   forgotPassword,
-  resetPassword
+  resetPassword,
+  addAccount,
+  deleteAccount,
+  getUserAccounts
 } from '@/services'
+
 import { sendVibration } from '@/utils/notifications'
 
 const handleError = err => {
@@ -97,6 +101,17 @@ const actions = {
     resetPassword(data)
       .then(resp => {
         commit('reset_password_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async deleteAccount({ commit }, account) {
+    commit('start_request')
+    deleteAccount(account)
+      .then(resp => {
+        commit('delete_account_success', resp.data)
       })
       .catch(err => {
         handleError(err)

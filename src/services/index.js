@@ -1,5 +1,5 @@
 import { login, signup, confirmEmail, forgotPassword, resetPassword } from './auth'
-import { addAccount, getUserAccounts } from './account'
+import { addAccount, deleteAccount, getUserAccounts } from './account'
 
 export {
   login,
@@ -8,5 +8,6 @@ export {
   resetPassword,
   confirmEmail,
   addAccount,
+  deleteAccount,
   getUserAccounts
 }

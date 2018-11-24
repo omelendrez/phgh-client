@@ -7,7 +7,7 @@
             <v-icon>person</v-icon>
           </v-tab>
           <v-tab-item>
-            <v-text-field prepend-icon="person" v-model="user.username" label="Username" type="text"  :rules="[rules.minUser]"></v-text-field>
+            <v-text-field prepend-icon="person" v-model="user.username" label="Username" type="text"></v-text-field>
           </v-tab-item>
 
           <v-tab>

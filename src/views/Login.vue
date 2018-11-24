@@ -41,6 +41,9 @@ export default {
   watch: {
     user() {
       this.showForm = !this.user
+      if (this.user) {
+        this.$router.push({ name: 'Dashboard' })
+      }
     }
   },
   methods: {
