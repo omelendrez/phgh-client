@@ -10,12 +10,14 @@
       <td>{{ props.item.accountHolderName }}</td>
       <td>{{ props.item.NUBAN }}</td>
       <td>{{ props.item.status }}</td>
+      <td class="justify-center layout">
+        <v-icon small color="error" @click="doDeleteAccount(props.item)">clear</v-icon>
+      </td>
     </template>
   </v-data-table>
 </template>
 <script>
-const banks = require('./../../utils/common.json').banks
-const status = require('./../../utils/common.json').status
+const { banks, status } = require('./../../utils/common.json')
 
 export default {
   name: 'AccountsTable',
@@ -23,6 +25,10 @@ export default {
     accounts: {
       type: Array,
       default: []
+    },
+    deleteAccount: {
+      type: Function,
+      default: undefined
     }
   },
   data() {
@@ -31,7 +37,8 @@ export default {
         { text: 'Bank Code', sortable: false, value: 'bankCode' },
         { text: 'Account Holder', sortable: false, value: 'accountHolderName' },
         { text: 'NUBAN', sortable: true, value: 'NUBAN' },
-        { text: 'Status', sortable: false, value: 'status' }
+        { text: 'Status', sortable: false, value: 'status' },
+        { text: 'Actions', value: 'actions', align: 'center' }
       ],
       items: []
     }
@@ -46,6 +53,11 @@ export default {
         })
         this.items = items
       }
+    }
+  },
+  methods: {
+    doDeleteAccount(item) {
+      this.deleteAccount(item)
     }
   }
 }
