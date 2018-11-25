@@ -50,7 +50,7 @@
       </v-card-text>
     </v-card>
     <Confirm :confirm="confirm" :title="title" :message="message" :active="showConfirm" />
-    <ConfirmBitcoin :confirm="confirmBitcoin" :title="title" :message="message" :active="showConfirmBitcoin" />
+    <Confirm :confirm="confirmBitcoin" :title="title" :message="message" :active="showConfirmBitcoin" />
   </v-container>
 </template>
 
@@ -62,7 +62,6 @@ import AccountsForm from '@/components/forms/AccountsForm'
 import BitcoinAccountsTable from '@/components/forms/BitcoinAccountsTable'
 import BitcoinAccountsForm from '@/components/forms/BitcoinAccountsForm'
 import Confirm from '@/components/common/Confirm'
-import ConfirmBitcoin from '@/components/common/Confirm'
 
 export default {
   name: 'Accounts',
@@ -73,8 +72,7 @@ export default {
     AccountsTable,
     BitcoinAccountsTable,
     BitcoinAccountsForm,
-    Confirm,
-    ConfirmBitcoin
+    Confirm
   },
   computed: {
     user() {
