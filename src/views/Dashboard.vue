@@ -6,12 +6,12 @@
         <Logo />
       </v-card-title>
       <v-card-text>
-        <v-alert :value="true" type="error">
+        <v-alert :value="true" type="info">
           {{message}}
         </v-alert>
         <v-container class="buttons">
-          <v-btn large block round color="primary" @click="ph">Provide help</v-btn>
-          <v-btn large block round color="primary" @click="rec">Recommit</v-btn>
+          <v-btn large block round dark color="pink" @click="ph">Provide help</v-btn>
+          <v-btn large block round dark color="purple" @click="rec">Recommit</v-btn>
           <v-btn large block round color="primary" @click="gh">Get help</v-btn>
         </v-container>
       </v-card-text>
