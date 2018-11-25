@@ -168,6 +168,8 @@ export default {
       this.$router.push({ name: 'Login' })
       return
     }
+  },
+  mounted() {
     store.dispatch('loadUserAccounts', this.user)
     store.dispatch('loadUserBitcoinAccounts', this.user)
   }
