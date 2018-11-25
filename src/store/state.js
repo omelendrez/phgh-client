@@ -7,6 +7,8 @@ const state = {
   apiMessage: null,
   account: null,
   accounts: [],
+  bitcoinAccount: null,
+  bitcoinAccounts: [],
   passwordResetted: null
 }
 export default state

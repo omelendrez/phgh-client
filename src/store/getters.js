@@ -6,6 +6,8 @@ const getters = {
   apiMessage: state => state.apiMessage,
   account: state => state.account,
   accounts: state => state.accounts,
+  bitcoinAccount: state => state.bitcoinAccount,
+  bitcoinAccounts: state => state.bitcoinAccounts,
   passwordResetted: state => state.passwordResetted
 }
 export default getters

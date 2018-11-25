@@ -108,7 +108,6 @@ export default {
         default:
           user.username = this.user.username
       }
-      console.log(user)
       this.forgotPassword(user)
     }
   },
