@@ -3,7 +3,6 @@
     hide-actions
     :items="items"
     :headers="headers"
-    class="elevation-1"
   >
     <template slot="items" slot-scope="props">
       <td>{{ props.item.bankCode }}</td>

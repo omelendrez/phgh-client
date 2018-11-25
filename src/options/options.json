@@ -67,8 +67,8 @@
             "public": false
         },
         {
-            "title": "My Status",
-            "route": "MyStatus",
+            "title": "My FITTOC",
+            "route": "MyFittoc",
             "icon": "dns",
             "public": false
         },

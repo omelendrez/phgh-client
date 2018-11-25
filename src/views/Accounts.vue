@@ -1,24 +1,32 @@
 <template>
-  <v-content>
-    <v-container v-show="!showForm">
-      <AccountsTable :accounts="items" :deleteAccount="deleteAccount" class="accounts" />
-      <v-btn color="primary" @click="showForm = !showForm">Add account</v-btn>
-    </v-container>
-    <v-container fill-height>
-      <v-layout align-center justify-center>
-        <v-flex xs12 sm8 md4 v-if="showForm">
-          <v-toolbar color="primary" dark>
-            <v-toolbar-title>
-              Add Account
-            </v-toolbar-title>
-            <Logo />
-          </v-toolbar>
-          <AccountsForm :addAccount="addAccount" :item="item" :closeForm="closeForm" />
-        </v-flex>
-      </v-layout>
-    </v-container>
-    <Confirm :confirm="confirm" :title="title" :message="message" :active="showConfirm" />
-  </v-content>
+  <v-container class="accounts">
+    <v-card>
+      <v-card-title primary-title class="headline green lighten-3">
+        <h1 class="headline">Accounts</h1>
+        <Logo />
+      </v-card-title>
+      <v-card-text>
+          <v-container v-show="!showForm">
+            <AccountsTable :accounts="items" :deleteAccount="deleteAccount" />
+            <v-btn color="primary" @click="showForm = !showForm">Add account</v-btn>
+          </v-container>
+          <v-container fill-height>
+            <v-layout align-center justify-center>
+              <v-flex xs12 sm8 md4 v-if="showForm">
+                <v-toolbar color="primary" dark>
+                  <v-toolbar-title>
+                    Add Account
+                  </v-toolbar-title>
+                  <Logo />
+                </v-toolbar>
+                <AccountsForm :addAccount="addAccount" :item="item" :closeForm="closeForm" />
+              </v-flex>
+            </v-layout>
+          </v-container>
+          <Confirm :confirm="confirm" :title="title" :message="message" :active="showConfirm" />
+      </v-card-text>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -98,6 +106,6 @@ export default {
 
 <style scoped>
 .accounts {
-  margin-top: 64px;
+  margin-top: 32px;
 }
 </style>

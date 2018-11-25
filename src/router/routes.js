@@ -63,6 +63,11 @@ const routes = [
     path: '/reset-password/:uid',
     name: 'ResetPassword',
     component: 'ResetPassword'
+  },
+  {
+    path: '/my-fittoc',
+    name: 'MyFittoc',
+    component: 'MyFittoc'
   }
 ]
 
