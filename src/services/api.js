@@ -12,6 +12,4 @@ if (token) {
 
 const HTTP = axios.create(config)
 
-export {
-  HTTP as default
-}
+export { HTTP as default }
