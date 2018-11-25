@@ -59,7 +59,7 @@ export default {
     }
   }
 }
-</script>ç
+</script>
 <style scoped>
 .title {
   color: #356859;
@@ -69,10 +69,8 @@ export default {
   margin: 14px;
 }
 .label {
-  display: inline-block;
-  margin-right: 14px;
-  width: 80px;
-  text-align: right;
+  display: block;
+  color: #888;
 }
 .value {
   display: inline-block;
