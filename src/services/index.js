@@ -1,5 +1,16 @@
-import { login, signup, confirmEmail, forgotPassword, resetPassword } from './auth'
+import {
+  login,
+  signup,
+  confirmEmail,
+  forgotPassword,
+  resetPassword
+} from './auth'
 import { addAccount, deleteAccount, getUserAccounts } from './account'
+import {
+  addBitcoinAccount,
+  deleteBitcoinAccount,
+  getUserBitcoinAccounts
+} from './bitcoinAccount'
 
 export {
   login,
@@ -9,5 +20,8 @@ export {
   confirmEmail,
   addAccount,
   deleteAccount,
-  getUserAccounts
+  getUserAccounts,
+  addBitcoinAccount,
+  deleteBitcoinAccount,
+  getUserBitcoinAccounts
 }

@@ -5,9 +5,7 @@
     :headers="headers"
   >
     <template slot="items" slot-scope="props">
-      <td>{{ props.item.bankCode }}</td>
-      <td>{{ props.item.accountHolderName }}</td>
-      <td>{{ props.item.NUBAN }}</td>
+      <td>{{ props.item.bitcoinAddress }}</td>
       <td>{{ props.item.status }}</td>
       <td class="justify-center layout">
         <v-icon small color="error" @click="doDeleteAccount(props.item)">clear</v-icon>
@@ -16,12 +14,12 @@
   </v-data-table>
 </template>
 <script>
-const { banks, status } = require('./../../utils/common.json')
+const { status } = require('./../../utils/common.json')
 
 export default {
-  name: 'AccountsTable',
+  name: 'BitcoinAccountsTable',
   props: {
-    accounts: {
+    bitcoinAccounts: {
       type: Array,
       default: []
     },
@@ -33,9 +31,7 @@ export default {
   data() {
     return {
       headers: [
-        { text: 'Bank Code', sortable: false, value: 'bankCode' },
-        { text: 'Account Holder', sortable: false, value: 'accountHolderName' },
-        { text: 'NUBAN', sortable: true, value: 'NUBAN' },
+        { text: 'Bitcoin address', sortable: true, value: 'bitcoinAddress' },
         { text: 'Status', sortable: false, value: 'status' },
         { text: 'Actions', value: 'actions', align: 'center' }
       ],
@@ -43,15 +39,12 @@ export default {
     }
   },
   watch: {
-    accounts() {
-      if (this.accounts.length) {
-        const items = this.accounts.map(item => {
-          item.bankCode = banks.find(bank => bank.code === item.bankCode).name
-          item.status = status.find(st => st.status === item.status).description
-          return item
-        })
-        this.items = items
-      }
+    bitcoinAccounts() {
+      const items = this.bitcoinAccounts.map(item => {
+        item.status = status.find(st => st.status === item.status).description
+        return item
+      })
+      this.items = items
     }
   },
   methods: {

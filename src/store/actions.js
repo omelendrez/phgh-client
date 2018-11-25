@@ -6,12 +6,16 @@ import {
   resetPassword,
   addAccount,
   deleteAccount,
-  getUserAccounts
+  getUserAccounts,
+  addBitcoinAccount,
+  deleteBitcoinAccount,
+  getUserBitcoinAccounts
 } from '@/services'
 
 import { sendVibration } from '@/utils/notifications'
 
 const handleError = err => {
+  console.log(err)
   sendVibration()
   let error = {
     success: false,
@@ -96,6 +100,17 @@ const actions = {
         commit('request_error', handleError(err))
       })
   },
+  async deleteAccount({ commit }, account) {
+    commit('start_request')
+    deleteAccount(account)
+      .then(resp => {
+        commit('account_delete_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
   async resetPassword({ commit }, data) {
     commit('start_request')
     resetPassword(data)
@@ -107,11 +122,33 @@ const actions = {
         commit('request_error', handleError(err))
       })
   },
-  async deleteAccount({ commit }, account) {
+  async addBitcoinAccount({ commit }, account) {
     commit('start_request')
-    deleteAccount(account)
+    addBitcoinAccount(account)
       .then(resp => {
-        commit('delete_account_success', resp.data)
+        commit('bitcoin_account_create_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async loadUserBitcoinAccounts({ commit }, user) {
+    commit('start_request')
+    getUserBitcoinAccounts(user)
+      .then(resp => {
+        commit('bitcoin_accounts_list_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async deleteBitcoinAccount({ commit }, account) {
+    commit('start_request')
+    deleteBitcoinAccount(account)
+      .then(resp => {
+        commit('bitcoin_account_delete_success', resp.data)
       })
       .catch(err => {
         handleError(err)

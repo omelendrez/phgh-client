@@ -44,14 +44,28 @@ const mutations = {
     state.status = 'success'
     state.accounts = accounts
   },
-  reset_password_success(state) {
-    state.status = 'success'
-    state.passwordResetted = true
-  },
-  delete_account_success(state, { account, message }) {
+  account_delete_success(state, { account, message }) {
     state.status = 'success'
     state.account = account
     state.apiMessage = message
+  },
+  bitcoin_account_create_success(state, { account, message }) {
+    state.status = 'success'
+    state.bitcoinAccount = account
+    state.apiMessage = message
+  },
+  bitcoin_accounts_list_success(state, { bitcoinAccounts }) {
+    state.status = 'success'
+    state.bitcoinAccounts = bitcoinAccounts
+  },
+  bitcoin_account_delete_success(state, { account, message }) {
+    state.status = 'success'
+    state.bitcoinAccount = account
+    state.apiMessage = message
+  },
+  reset_password_success(state) {
+    state.status = 'success'
+    state.passwordResetted = true
   }
 }
 
