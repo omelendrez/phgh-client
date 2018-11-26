@@ -9,7 +9,7 @@
             </v-toolbar-title>
             <Logo />
           </v-toolbar>
-          <RegisterForm :signup="signup" />
+          <RegisterForm :signup="signup" :referrer="referrer" />
         </v-flex>
         <v-flex v-else xs12 sm8 md4>
           <v-card>
@@ -47,28 +47,29 @@ export default {
     Logo,
     RegisterForm
   },
-  data () {
+  data() {
     return {
-      showForm: true
+      showForm: true,
+      referrer: null
     }
   },
   computed: {
-    user () {
+    user() {
       return store.getters.user
     }
   },
   watch: {
-    user () {
+    user() {
       this.showForm = !this.user
     }
   },
   methods: {
-    signup (user) {
+    signup(user) {
       store.dispatch('signup', user)
     }
   },
-  created () {
-
+  created() {
+    this.referrer = this.$route.params.username
   }
 }
 </script>

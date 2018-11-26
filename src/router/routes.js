@@ -10,7 +10,7 @@ const routes = [
     component: 'Dashboard'
   },
   {
-    path: '/signup',
+    path: '/signup/:username',
     name: 'Signup',
     component: 'Signup'
   },
@@ -68,6 +68,11 @@ const routes = [
     path: '/my-fittoc',
     name: 'MyFittoc',
     component: 'MyFittoc'
+  },
+  {
+    path: '/referrals',
+    name: 'Referrals',
+    component: 'Referrals'
   }
 ]
 

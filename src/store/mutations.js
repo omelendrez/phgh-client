@@ -8,13 +8,14 @@ const mutations = {
     state.status = 'error'
     state.apiError = error
   },
-  auth_success(state, { token, user, message }) {
+  auth_success(state, { token, user, referralLink }) {
     state.status = 'success'
     state.token = token
     state.user = user
+    state.referralLink = referralLink
     state.authenticated = true
   },
-  forgot_password_success(state, { user, message }) {
+  forgot_password_success(state, { message }) {
     state.status = 'success'
     state.apiMessage = message
   },
