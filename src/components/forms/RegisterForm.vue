@@ -1,9 +1,10 @@
 <template>
   <v-card class="elevation-12">
     <v-container>
-
       <v-card-text>
         <v-form v-model="valid" ref="form">
+
+          <v-text-field prepend-icon="group_work" v-model="referrer" label="Referrer" type="text" disabled></v-text-field>
 
           <v-text-field prepend-icon="person" v-model="user.username" label="Username" type="text" :rules="[rules.required, rules.minUser]" hint="At least 8 characters" append-icon="autorenew" @click:append="getName"></v-text-field>
 
@@ -34,15 +35,23 @@ import { generateName } from '@/utils/usernames'
 export default {
   name: 'RegisterForm',
   props: {
-    signup: Function
+    signup: {
+      type: Function,
+      default: undefined
+    },
+    referrer: {
+      type: String,
+      default: ''
+    }
   },
-  data () {
+  data() {
     return {
       user: {
         username: '',
         email: '',
         phone: '',
-        password: ''
+        password: '',
+        referrerUsername: ''
       },
       valid: false,
       retype: '',
@@ -51,17 +60,20 @@ export default {
       showRetype: false
     }
   },
-  created () {
+  created() {
     this.rules = rules
+    this.user.referrerUsername = this.referrer.toLowerCase()
   },
   methods: {
-    doSignup () {
+    doSignup() {
       if (this.valid) {
         this.signup(this.user)
       }
     },
-    getName () {
-      this.user.username = generateName().split(' ').join('')
+    getName() {
+      this.user.username = generateName()
+        .split(' ')
+        .join('')
     }
   }
 }

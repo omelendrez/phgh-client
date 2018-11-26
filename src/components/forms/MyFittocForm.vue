@@ -15,6 +15,7 @@
         <span class="value">{{user.phone}}</span>
       </div>
     </v-card-text>
+    <v-divider></v-divider>
     <v-card-text>
       <span class="title">MY REFEREE</span>
       <div class="user-data">
@@ -30,6 +31,7 @@
         <span class="value"></span>
       </div>
     </v-card-text>
+    <v-divider></v-divider>
     <v-card-text>
       <span class="title">MY GUIDER</span>
       <div class="user-data">

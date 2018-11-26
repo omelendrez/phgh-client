@@ -55,6 +55,12 @@
             "public": false
         },
         {
+            "title": "My FITTOC",
+            "route": "MyFittoc",
+            "icon": "dns",
+            "public": false
+        },
+        {
             "title": "Accounts",
             "route": "Accounts",
             "icon": "account_balance",
@@ -64,12 +70,6 @@
             "title": "E-Money",
             "route": "Emoney",
             "icon": "money",
-            "public": false
-        },
-        {
-            "title": "My FITTOC",
-            "route": "MyFittoc",
-            "icon": "dns",
             "public": false
         },
         {
