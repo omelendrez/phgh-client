@@ -27,7 +27,6 @@
 
       <v-card-title primary-title class="headline green lighten-3">
         <h1 class="headline">Bitcoin Accounts</h1>
-        <Logo />
       </v-card-title>
       <v-card-text>
           <v-container v-show="!showForm && !showBitcoinForm">

@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       showForm: true,
-      referrer: null
+      referrer: ''
     }
   },
   computed: {
@@ -68,8 +68,8 @@ export default {
       store.dispatch('signup', user)
     }
   },
-  created() {
-    this.referrer = this.$route.params.username
+  mounted() {
+    this.referrer = this.$route.params.username || ''
   }
 }
 </script>
