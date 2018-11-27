@@ -1,5 +1,6 @@
 <template>
   <v-card flat>
+
     <v-card-text>
       <span class="title">MY INFO</span>
       <div class="user-data">
@@ -14,6 +15,14 @@
         <span class="label">Phone:</span>
         <span class="value">{{user.phone}}</span>
       </div>
+      <div class="user-data">
+        <div class="label">Referral link</div>
+        <span class="value" @click="copy">
+          {{referralLink}}
+          <v-alert :value="showAlert" type="success">Your referral link has been copied</v-alert>
+        </span>
+      </div>
+      <v-btn small color="primary" dark @click="copy">Copy link</v-btn>
     </v-card-text>
     <v-divider></v-divider>
     <v-card-text>
@@ -51,13 +60,27 @@
 </template>
 
 <script>
-import store from '@/store'
 export default {
   name: 'MyFittocForm',
-  store,
-  computed: {
-    user() {
-      return store.getters.user
+  props: {
+    user: {
+      type: Object,
+      default: undefined
+    },
+    referralLink: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      showAlert: false
+    }
+  },
+  methods: {
+    copy() {
+      navigator.clipboard.writeText(this.referralLink)
+      this.showAlert = true
     }
   }
 }
