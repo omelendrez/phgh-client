@@ -6,7 +6,7 @@
         <Logo />
       </v-card-title>
       <v-card-text>
-        <ReferralsForm :referralLink="referralLink" />
+        <ReferralsForm />
       </v-card-text>
     </v-card>
   </v-container>
@@ -27,9 +27,6 @@ export default {
   computed: {
     user() {
       return store.getters.user
-    },
-    referralLink() {
-      return store.getters.referralLink
     }
   },
   created() {

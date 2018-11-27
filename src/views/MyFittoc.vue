@@ -6,7 +6,7 @@
         <Logo />
       </v-card-title>
       <v-card-text>
-        <MyFittocForm />
+        <MyFittocForm :user="user" :referralLink="referralLink" />
       </v-card-text>
     </v-card>
   </v-container>
@@ -27,6 +27,9 @@ export default {
   computed: {
     user() {
       return store.getters.user
+    },
+    referralLink() {
+      return store.getters.referralLink
     }
   },
   created() {
