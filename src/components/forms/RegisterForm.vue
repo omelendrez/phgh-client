@@ -4,7 +4,7 @@
       <v-card-text>
         <v-form v-model="valid" ref="form">
 
-          <v-text-field prepend-icon="group_work" v-model="user.referrerUsername" type="text" label="Referrer"  :disabled="!!referrer.length"></v-text-field>
+          <v-text-field prepend-icon="group_work" v-model="referrer" type="text" disabled></v-text-field>
 
           <v-text-field prepend-icon="person" v-model="user.username" label="Username" type="text" :rules="[rules.required, rules.minUser]" hint="At least 8 characters" append-icon="autorenew" @click:append="getName"></v-text-field>
 
@@ -63,8 +63,6 @@ export default {
   created() {
     this.rules = rules
     this.user.referrerUsername = this.referrer
-      ? this.referrer.toLowerCase()
-      : ''
   },
   methods: {
     doSignup() {

@@ -41,7 +41,7 @@ import Logo from '@/components/common/Logo'
 import RegisterForm from '@/components/forms/RegisterForm.vue'
 
 export default {
-  name: 'Signup',
+  name: 'Referral',
   store,
   components: {
     Logo,
@@ -67,6 +67,9 @@ export default {
     signup(user) {
       store.dispatch('signup', user)
     }
+  },
+  mounted() {
+    this.referrer = this.$route.params.username
   }
 }
 </script>
