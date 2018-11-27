@@ -10,6 +10,11 @@ if (token) {
   Object.assign(config, { headers: { Authorization: token } })
 }
 */
+const token = localStorage.getItem('token')
+if (token) {
+  axios.defaults.headers.common['Authorization'] = token
+}
+
 const HTTP = axios.create(config)
 
 export { HTTP as default }
