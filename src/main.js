@@ -14,7 +14,6 @@ if (token) {
   Vue.prototype.$http.defaults.headers.common['Authorization'] = token
 }
 
-
 Vue.use(Vuetify, {
   theme: {
     primary: '#356859',
