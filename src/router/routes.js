@@ -10,7 +10,12 @@ const routes = [
     component: 'Dashboard'
   },
   {
-    path: '/signup/:username',
+    path: '/referral/:username',
+    name: 'Referral',
+    component: 'Referral'
+  },
+  {
+    path: '/signup/',
     name: 'Signup',
     component: 'Signup'
   },
