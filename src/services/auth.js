@@ -2,6 +2,8 @@ import HTTP from './api'
 
 export const login = user => {
   return new Promise((resolve, reject) => {
+    const token = localStorage.getItem('token')
+    HTTP.defaults.headers.common['Authorization'] = token
     HTTP.post('participants/login', user)
       .then(resp => {
         resolve(resp)
@@ -14,6 +16,8 @@ export const login = user => {
 
 export const signup = user => {
   return new Promise((resolve, reject) => {
+    const token = localStorage.getItem('token')
+    HTTP.defaults.headers.common['Authorization'] = token
     HTTP.post('participants', user)
       .then(resp => {
         resolve(resp)
@@ -26,6 +30,8 @@ export const signup = user => {
 
 export const forgotPassword = user => {
   return new Promise((resolve, reject) => {
+    const token = localStorage.getItem('token')
+    HTTP.defaults.headers.common['Authorization'] = token
     HTTP.post('participants/forgot-password', user)
       .then(resp => {
         resolve(resp)
@@ -38,6 +44,8 @@ export const forgotPassword = user => {
 
 export const confirmEmail = uid => {
   return new Promise((resolve, reject) => {
+    const token = localStorage.getItem('token')
+    HTTP.defaults.headers.common['Authorization'] = token
     HTTP.post('participants/confirm', { uid: uid })
       .then(resp => {
         resolve(resp)
