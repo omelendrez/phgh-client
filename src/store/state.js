@@ -10,6 +10,7 @@ const state = {
   accounts: [],
   bitcoinAccount: null,
   bitcoinAccounts: [],
-  passwordResetted: null
+  passwordResetted: null,
+  referrals: []
 }
 export default state

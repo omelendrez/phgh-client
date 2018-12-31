@@ -9,6 +9,7 @@ const getters = {
   accounts: state => state.accounts,
   bitcoinAccount: state => state.bitcoinAccount,
   bitcoinAccounts: state => state.bitcoinAccounts,
-  passwordResetted: state => state.passwordResetted
+  passwordResetted: state => state.passwordResetted,
+  referrals: state => state.referrals
 }
 export default getters
