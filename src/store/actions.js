@@ -9,7 +9,8 @@ import {
   getUserAccounts,
   addBitcoinAccount,
   deleteBitcoinAccount,
-  getUserBitcoinAccounts
+  getUserBitcoinAccounts,
+  getReferrals
 } from '@/services'
 
 import { sendVibration } from '@/utils/notifications'
@@ -149,6 +150,17 @@ const actions = {
     deleteBitcoinAccount(account)
       .then(resp => {
         commit('bitcoin_account_delete_success', resp.data)
+      })
+      .catch(err => {
+        handleError(err)
+        commit('request_error', handleError(err))
+      })
+  },
+  async loadReferrals({ commit }, user) {
+    commit('start_request')
+    getReferrals(user)
+      .then(resp => {
+        commit('referrals_list_success', resp.data)
       })
       .catch(err => {
         handleError(err)

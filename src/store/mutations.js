@@ -67,6 +67,10 @@ const mutations = {
   reset_password_success(state) {
     state.status = 'success'
     state.passwordResetted = true
+  },
+  referrals_list_success(state, { referrals }) {
+    state.status = 'success'
+    state.referrals = referrals
   }
 }
 

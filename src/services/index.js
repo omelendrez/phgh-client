@@ -11,6 +11,7 @@ import {
   deleteBitcoinAccount,
   getUserBitcoinAccounts
 } from './bitcoinAccount'
+import { getReferrals } from './referral'
 
 export {
   login,
@@ -23,5 +24,6 @@ export {
   getUserAccounts,
   addBitcoinAccount,
   deleteBitcoinAccount,
-  getUserBitcoinAccounts
+  getUserBitcoinAccounts,
+  getReferrals
 }
